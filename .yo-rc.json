@@ -1,0 +1,17 @@
+{
+  "generator-ui5-app": {
+    "namespace": "com.sap.workout",
+    "framework": "OpenUI5",
+    "frameworkVersion": "1.120.3",
+    "author": "Dirk Feeken",
+    "initrepo": true,
+    "appId": "com.sap.workout",
+    "appURI": "com/sap/workout",
+    "cdnDomain": "sdk.openui5.org",
+    "defaultTheme": "sap_horizon",
+    "qunitCoverageFile": "qunit-coverage-istanbul.js",
+    "gte1_98_0": true,
+    "gte1_104_0": true,
+    "setupCompleted": true
+  }
+}
