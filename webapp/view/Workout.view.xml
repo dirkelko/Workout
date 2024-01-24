@@ -1,0 +1,89 @@
+<mvc:View 
+    controllerName="com.sap.workout.controller.Workout" 
+    displayBlock="true" 
+    xmlns:mvc="sap.ui.core.mvc" 
+    xmlns="sap.m"
+    xmlns:mc="com.sap.workout.control">
+  <Page 
+    id="WorkoutPage" 
+    title="{workoutsModel>name} Level {workoutsModel>level}" 
+    showNavButton="true"
+    navButtonPress=".navToMain">
+    <content>
+        <mc:Timer
+            id="Timer"
+            workoutName="{workoutsModel>name}"
+            exercises="{workoutsModel>exercises}"/>
+        <Button
+            width="100%"
+            id="startButton"
+            icon="sap-icon://play"
+            text="START"
+            type="Emphasized"
+            press="startWorkout" />
+        <Button
+            width="100%"
+            id="stopButton"
+            icon="sap-icon://stop"
+            text="STOP"
+            type="Reject"
+            press="stopWorkout"
+            visible="false" />
+        <Button
+            width="50%"
+            id="continueButton"
+            text="CONTINUE"
+            icon="sap-icon://play"
+            type="Emphasized"
+            press="continueWorkout"
+            visible="false" />
+        <Button
+            width="50%"
+            id="resetButton"
+            text="RESET"
+            type="Neutral"
+            icon="sap-icon://restart"
+            press="resetWorkout"
+            visible="false" />
+	<ScrollContainer
+        id="scrCont"
+        height="50%"
+		width="100%"
+		vertical="true"
+		focusable="true">
+        <Table id="exercisesList" items="{path: 'workoutsModel>exercises', sorter: {path:'round', group:'.getRound', descending: false}}">
+            <columns>
+                <Column width="80%">
+                    <header>
+                        <!--Text text="Exercise"/-->
+                    </header>
+                </Column>
+                <Column width="20%">
+                    <header>
+                        <!--Text text="Duration"/-->
+                    </header>
+                </Column>
+                <Column width="15%" visible="false">
+                    <header>
+                        <Text text="Pause"/>
+                    </header>
+                </Column>
+            </columns>
+            <items>
+                <ColumnListItem visible="{workoutsModel>vis}">
+                    <cells>
+                        <Link
+                            text="{workoutsModel>name}"
+                            href="{workoutsModel>link}" />
+                        <!--Text text="{workoutsModel>name}"-->
+                        <Text text="{workoutsModel>duration}"/>
+                        <Text text="{workoutsModel>pause}"/>
+                    </cells>
+                </ColumnListItem>
+            </items>
+        </Table>
+</ScrollContainer>
+
+    </content>
+  </Page>
+</mvc:View>

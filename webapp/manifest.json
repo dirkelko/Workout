@@ -9,6 +9,12 @@
 		"description": "{{appDescription}}",
 		"applicationVersion": {
 			"version": "1.0.0"
+		},
+		"dataSources": {
+			"workoutsDataSource": {
+			  "type": "JSON",
+			  "uri": "./model/workouts.json"
+			}
 		}
 	},
 
@@ -34,7 +40,9 @@
 			"minUI5Version": "1.120.3",
 			"libs": {
 				"sap.ui.core": {},
-				"sap.m": {}
+				"sap.ui.layout": {},
+				"sap.m": {},
+				"sap.f": {}
 			}
 		},
 
@@ -51,8 +59,22 @@
 				"settings": {
 					"bundleName": "com.sap.workout.i18n.i18n"
 				}
+			},
+			"workoutsModel": {
+				"type": "sap.ui.model.json.JSONModel",
+				"dataSource": "workoutsDataSource"
 			}
 		},
+
+		"resources": {
+			"css": [
+				{
+					"uri": "css/style.css"
+				}
+			]
+
+		},
+
 
 		"routing": {
 			"config": {
@@ -68,14 +90,22 @@
 					"pattern": "",
 					"name": "main",
 					"target": "main"
-				}
-			],
+				},
+                {
+                    "name": "RouteWorkout",
+                    "pattern": "workout/{index}",
+                    "target": ["TargetWorkout"]
+                }			],
 			"targets": {
 				"main": {
 					"viewId": "main",
 					"viewName": "Main"
-				}
-			}
+				},
+                "TargetWorkout": {
+                    "viewId": "workout",
+                    "viewName": "Workout",
+                    "viewLevel": 2
+                }			}
 		}
 	}
 }

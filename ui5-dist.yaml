@@ -11,5 +11,6 @@ framework:
   version: "1.120.3"
   libraries:
     - name: sap.m
+    - name: sap.f
     - name: sap.ui.core
     - name: themelib_sap_horizon

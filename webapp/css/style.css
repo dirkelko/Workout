@@ -1,0 +1,64 @@
+:root { font-family: 'Inter', sans-serif; }
+@supports (font-variation-settings: normal) {
+  :root { font-family: 'Inter var', sans-serif; }
+}
+body {
+    background-color: black;
+}
+.clock{
+    display: block;
+    height: 50%;
+    width: 100%;
+    margin: 50 auto;
+}
+.HtmlIsland{
+    /*outline: solid 1px yellow;
+    outline-offset: -1px;*/
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.timerText{
+  /*outline: solid 1px orange;
+  outline-offset: -1px;*/
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 320px;
+  font-weight: 200;
+  text-align: center;
+  height:360px;
+  margin-right: 0px;
+  font-feature-settings: "tnum";
+}   
+.exerciseText{
+    color: white;
+    font-size: 72px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 100;
+    text-align: center;
+    height:120px;
+    margin-top: 0px;
+    margin-right: 0px;
+    font-feature-settings: "tnum";
+}
+.button{
+  width: 240px;
+  height: 80px;
+  line-height: 80px;
+  cursor: pointer;
+  font-size: 64px;
+  font-weight: 200;
+  border: solid;
+  border-radius: 40px;
+  margin-left: 10px;
+  margin-right: 10px;
+  color: white;
+  background-color:black;
+}
+
