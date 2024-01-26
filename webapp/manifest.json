@@ -95,6 +95,11 @@
                     "name": "RouteWorkout",
                     "pattern": "workout/{index}",
                     "target": ["TargetWorkout"]
+                },
+				{
+                    "name": "RouteVideo",
+                    "pattern": "workout/{index}/exercise/{exerciseIndex}",
+                    "target": ["TargetVideo"]
                 }			],
 			"targets": {
 				"main": {
@@ -105,6 +110,11 @@
                     "viewId": "workout",
                     "viewName": "Workout",
                     "viewLevel": 2
+                },
+                "TargetVideo": {
+                    "viewId": "video",
+                    "viewName": "Video",
+                    "viewLevel": 3
                 }			}
 		}
 	}

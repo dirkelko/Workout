@@ -54,7 +54,20 @@ sap.ui.define([
 		},
 
         navToMain: function () {
+            this.byId("Timer").stopClock();
+            this.byId("startButton").setVisible(true);
+            this.byId("stopButton").setVisible(false);
+            this.byId("resetButton").setVisible(false);
+            this.byId("continueButton").setVisible(false);
+
             this.getOwnerComponent().getRouter().navTo("main");
+        },
+
+        handleLinkPress: function(oEvent){
+            let iWorkoutIndex = this.getView().getBindingContext("workoutsModel").getProperty(this.getView().getBindingContext("workoutsModel").getPath()).id;
+            let iExerciseIndex = oEvent.getSource().getBindingContext("workoutsModel").getProperty("id");        
+            //let exerciseLink = oEvent.getSource().getBindingContext("workoutsModel").getProperty("link");        
+			this.getOwnerComponent().getRouter().navTo("RouteVideo", {index: iWorkoutIndex, exerciseIndex: iExerciseIndex,});
         }
 
     });

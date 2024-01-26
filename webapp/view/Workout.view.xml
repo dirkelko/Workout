@@ -1,89 +1,128 @@
-<mvc:View 
-    controllerName="com.sap.workout.controller.Workout" 
-    displayBlock="true" 
-    xmlns:mvc="sap.ui.core.mvc" 
+<mvc:View
+    controllerName="com.sap.workout.controller.Workout"
+    displayBlock="true"
+    xmlns:mvc="sap.ui.core.mvc"
     xmlns="sap.m"
-    xmlns:mc="com.sap.workout.control">
-  <Page 
-    id="WorkoutPage" 
-    title="{workoutsModel>name} Level {workoutsModel>level}" 
-    showNavButton="true"
-    navButtonPress=".navToMain">
-    <content>
-        <mc:Timer
-            id="Timer"
-            workoutName="{workoutsModel>name}"
-            exercises="{workoutsModel>exercises}"/>
-        <Button
-            width="100%"
-            id="startButton"
-            icon="sap-icon://play"
-            text="START"
-            type="Emphasized"
-            press="startWorkout" />
-        <Button
-            width="100%"
-            id="stopButton"
-            icon="sap-icon://stop"
-            text="STOP"
-            type="Reject"
-            press="stopWorkout"
-            visible="false" />
-        <Button
-            width="50%"
-            id="continueButton"
-            text="CONTINUE"
-            icon="sap-icon://play"
-            type="Emphasized"
-            press="continueWorkout"
-            visible="false" />
-        <Button
-            width="50%"
-            id="resetButton"
-            text="RESET"
-            type="Neutral"
-            icon="sap-icon://restart"
-            press="resetWorkout"
-            visible="false" />
-	<ScrollContainer
-        id="scrCont"
-        height="50%"
-		width="100%"
-		vertical="true"
-		focusable="true">
-        <Table id="exercisesList" items="{path: 'workoutsModel>exercises', sorter: {path:'round', group:'.getRound', descending: false}}">
-            <columns>
-                <Column width="80%">
-                    <header>
-                        <!--Text text="Exercise"/-->
-                    </header>
-                </Column>
-                <Column width="20%">
-                    <header>
-                        <!--Text text="Duration"/-->
-                    </header>
-                </Column>
-                <Column width="15%" visible="false">
-                    <header>
-                        <Text text="Pause"/>
-                    </header>
-                </Column>
-            </columns>
-            <items>
-                <ColumnListItem visible="{workoutsModel>vis}">
-                    <cells>
-                        <Link
-                            text="{workoutsModel>name}"
-                            href="{workoutsModel>link}" />
-                        <!--Text text="{workoutsModel>name}"-->
-                        <Text text="{workoutsModel>duration}"/>
-                        <Text text="{workoutsModel>pause}"/>
-                    </cells>
-                </ColumnListItem>
-            </items>
-        </Table>
-</ScrollContainer>
-
-    </content>
-  </Page>
+    xmlns:mc="com.sap.workout.control"
+>
+    <Page
+        id="WorkoutPage"
+        title="{workoutsModel>name} Level {workoutsModel>level}"
+        showNavButton="true"
+        navButtonPress=".navToMain"
+        enableScrolling="false"
+    >
+        <content>
+            <VBox
+                renderType="Bare"
+                fitContainer="true"
+            >
+                <mc:Timer
+                    id="Timer"
+                    workoutName="{workoutsModel>name}"
+                    exercises="{workoutsModel>exercises}"
+                    graphicsWidth="1200px"
+                    graphicsHeight="1200px"
+                    height="40%"
+                />
+                <Button
+                    width="100%"
+                    id="startButton"
+                    icon="sap-icon://play"
+                    text="START"
+                    type="Emphasized"
+                    press="startWorkout"
+                />
+                <Button
+                    width="100%"
+                    id="stopButton"
+                    icon="sap-icon://pause"
+                    text="PAUSE"
+                    type="Neutral"
+                    press="stopWorkout"
+                    visible="false"
+                />
+                <HBox>
+                    <Button
+                        width="100%"
+                        id="continueButton"
+                        text="CONTINUE"
+                        icon="sap-icon://play"
+                        type="Emphasized"
+                        press="continueWorkout"
+                        visible="false"
+                    >
+                        <layoutData>
+                            <FlexItemData
+                                growFactor="1"
+                                baseSize="0"
+                            />
+                        </layoutData>
+                    </Button>
+                    <Button
+                        width="100%"
+                        id="resetButton"
+                        text="RESET"
+                        type="Neutral"
+                        icon="sap-icon://restart"
+                        press="resetWorkout"
+                        visible="false"
+                    >
+                        <layoutData>
+                            <FlexItemData
+                                growFactor="1"
+                                baseSize="0"
+                            />
+                        </layoutData>
+                    </Button>
+                </HBox>
+                <ScrollContainer
+                    height="100%"
+                    vertical="true"
+                >
+                    <layoutData>
+                        <FlexItemData growFactor="1" />
+                    </layoutData>
+                    <Table
+                        id="exercisesList"
+                        items="{path: 'workoutsModel>exercises', sorter: {path:'round', group:'.getRound', descending: false}}"
+                    >
+                        <columns>
+                            <Column width="80%">
+                                <header>
+                                    <!--Text text="Exercise"/-->
+                                </header>
+                            </Column>
+                            <Column width="20%">
+                                <header>
+                                    <!--Text text="Duration"/-->
+                                </header>
+                            </Column>
+                            <Column
+                                width="15%"
+                                visible="false"
+                            >
+                                <header>
+                                    <Text text="Pause" />
+                                </header>
+                            </Column>
+                        </columns>
+                        <items>
+                            <ColumnListItem visible="{workoutsModel>vis}">
+                                <cells>
+                                    <Link
+                                        text="{workoutsModel>name}"
+                                        press="handleLinkPress"
+                                    />
+                                    <!--Text text="{workoutsModel>name}"-->
+                                    <Text text="{workoutsModel>duration}" />
+                                    <Text text="{workoutsModel>pause}" />
+                                </cells>
+                            </ColumnListItem>
+                        </items>
+                    </Table>
+                </ScrollContainer>
+            </VBox>
+        </content>
+    </Page>
 </mvc:View>

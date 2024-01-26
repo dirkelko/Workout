@@ -28,21 +28,17 @@
                                 growFactor="1"
                                 shrinkFactor="0"/>
                         </layoutData>
-                            <HBox justifyContent="SpaceBetween">
+                        <HBox justifyContent="SpaceBetween">
                             <VBox justifyContent="SpaceBetween" class="sapUiSmallMarginTop sapUiSmallMarginBegin">
-                            <Title text="{workoutsModel>name} {workoutsModel>roundsExercises}"/>
-                            <Label text="Level {workoutsModel>level}"/>
+                                <Title text="{workoutsModel>name} {workoutsModel>roundsExercises}"/>
+                                <Label text="Level {workoutsModel>level}"/>
+                            <ObjectNumber number="{workoutsModel>duration}" unit="min"/>
                             </VBox>
                             <core:Icon
-                            src="sap-icon://physical-activity"
-                            color="{path: 'workoutsModel>level', formatter:'.formatIconColor'}"
-                            size="2.5rem"
-                            class="sapUiSmallMarginTop sapUiSmallMarginEnd"/>
-                        </HBox>
-                        <HBox
-                            justifyContent="SpaceBetween"
-                            class="sapUiTinyMarginTop sapUiSmallMarginBottom sapUiSmallMarginBeginEnd">
-
+                                src="sap-icon://physical-activity"
+                                color="{path: 'workoutsModel>level', formatter:'.formatIconColor'}"
+                                size="2.5rem"
+                                class="sapUiSmallMarginTop sapUiSmallMarginEnd"/>
                         </HBox>
                     </CustomListItem>
                 </f:items>

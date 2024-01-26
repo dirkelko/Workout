@@ -15,11 +15,13 @@ sap.ui.define([],
 			let graphicsHeight = oTimer.getGraphicsHeight();
 
             oRm.openStart("div", oTimer);
+            oRm.style("height", oTimer.getHeight());
             oRm.class("graphics");
             oRm.openEnd();
             oRm.openStart("svg");
+            oRm.attr("id", "svgArea");
+            oRm.class("svg");
             oRm.attr("viewBox", "0 0 " + graphicsWidth + " " + graphicsHeight);
-            oRm.attr("xmlns", "http://www.w3.org/2000/svg")
             oRm.openEnd();
             oRm.openStart("circle");
             oRm.attr("id", "bgCircle");
@@ -47,9 +49,9 @@ sap.ui.define([],
 
             oRm.openStart("foreignObject");
             oRm.attr("x", "000");
-            oRm.attr("y", "320");
+            oRm.attr("y", "180");
             oRm.attr("width", "1200");
-            oRm.attr("height", "600");
+            oRm.attr("height", "1000");
             oRm.openEnd();
           
                 oRm.openStart("div");
@@ -58,10 +60,16 @@ sap.ui.define([],
                 oRm.openEnd();
 
                     oRm.openStart("div");
+                    oRm.attr("id", "nextName");
+                    oRm.class("exerciseText");
+                    oRm.openEnd();
+                        oRm.text("");
+                    oRm.close("div")
+                    oRm.openStart("div");
                     oRm.attr("id", "exerciseName");
                     oRm.class("exerciseText");
                     oRm.openEnd();
-                        oRm.text("DURATION");
+                        oRm.text("Duration");
                     oRm.close("div")
 
                     oRm.openStart("div");
@@ -71,32 +79,20 @@ sap.ui.define([],
                         oRm.text("00:00");
                     oRm.close("div")
 
-                    /*oRm.openStart("div");
-                    oRm.class("buttonArea");
+                    oRm.openStart("div");
+                    oRm.attr("id", "exerciseInfo");
+                    oRm.class("exerciseInfo");
                     oRm.openEnd();
+                        oRm.text("Exercise");
+                    oRm.close("div")
 
-                        oRm.openStart("div");
-                        oRm.attr("id", "startButton");
-                        oRm.class("button");
-                        oRm.openEnd();
-                            oRm.text("START");
-                        oRm.close("div")
+                    oRm.openStart("div");
+                    oRm.attr("id", "roundInfo");
+                    oRm.class("roundInfo");
+                    oRm.openEnd();
+                        oRm.text("Round");
+                    oRm.close("div")
 
-                        oRm.openStart("div");
-                        oRm.attr("id", "stopButton");
-                        oRm.class("button");
-                        oRm.openEnd();
-                            oRm.text("STOP");
-                        oRm.close("div")
-
-                        oRm.openStart("div");
-                        oRm.attr("id", "resetButton");
-                        oRm.class("button");
-                        oRm.openEnd();
-                            oRm.text("RESET");
-                        oRm.close("div")
-
-                    oRm.close("div")*/
 
                 oRm.close("div")
 

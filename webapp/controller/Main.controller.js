@@ -2,8 +2,12 @@ sap.ui.define(["./BaseController", "sap/m/MessageBox"], function (BaseController
 	"use strict";
 
 	return BaseController.extend("com.sap.workout.controller.Main", {
-		sayHello: function () {
-			MessageBox.show("Hello World!");
+		onInit: function () {
+			//calculate overall duration of each workout;
+			let oModel = this.getOwnerComponent().getModel("workoutsModel");
+			oModel.oData.workouts.forEach( workout =>{
+				workout.duration = Math.round(workout.exercises.reduce((a,e)=>a+parseInt(e.duration),0)/60);
+			})
 		},
 
 		formatIconColor: function(level){

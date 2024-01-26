@@ -5,9 +5,14 @@
 body {
     background-color: black;
 }
+.graphics{
+  justify-content: center;
+  display: flex;
+
+}
 .clock{
-    display: block;
-    height: 50%;
+    display: flex;
+    height: 100%;
     width: 100%;
     margin: 50 auto;
 }
@@ -21,13 +26,12 @@ body {
 }
 
 .timerText{
-  /*outline: solid 1px orange;
-  outline-offset: -1px;*/
+  outline-offset: -1px;
   display: flex;
   align-items: center;
   justify-content: center;
   color: white;
-  font-size: 320px;
+  font-size: 360px;
   font-weight: 200;
   text-align: center;
   height:360px;
@@ -35,30 +39,44 @@ body {
   font-feature-settings: "tnum";
 }   
 .exerciseText{
-    color: white;
-    font-size: 72px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: 100;
-    text-align: center;
-    height:120px;
-    margin-top: 0px;
-    margin-right: 0px;
-    font-feature-settings: "tnum";
-}
-.button{
-  width: 240px;
-  height: 80px;
-  line-height: 80px;
-  cursor: pointer;
-  font-size: 64px;
-  font-weight: 200;
-  border: solid;
-  border-radius: 40px;
-  margin-left: 10px;
-  margin-right: 10px;
   color: white;
-  background-color:black;
+  font-size: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 100;
+  text-align: center;
+  height:120px;
+  margin-top: 0px;
+  margin-right: 0px;
+  font-feature-settings: "tnum";
 }
+.exerciseInfo{
+  width: 100%;
+  color: grey;
+  font-size: 72px;
+  align-items: center;
+  justify-content: center;
+  font-weight: 100;
+  text-align: center;
+  height:100px;
+  margin-top: 40px;
+  margin-left: 0px;
+  font-feature-settings: "tnum";
+}
+.roundInfo{
+  width: 100%;
+  color: grey;
+  font-size: 72px;
+  align-items: center;
+  justify-content: center;
+  font-weight: 100;
+  text-align: center;
+  height:100px;
+  margin-top: 0px;
+  margin-right: 0px;
+  z-index: 3;
+  font-feature-settings: "tnum";
+}
+
 

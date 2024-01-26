@@ -7,11 +7,15 @@ sap.ui.define([
 	// helper function to format time
 	function timerString(remTime){
 		let iSeconds = Math.floor(remTime/1000 + .9);
-		let sMin = ((iSeconds - (iSeconds % 60))/60).toString();
-		let sSec = (iSeconds % 60).toString();
-		sSec = (sSec.length ==1)? "0" + sSec: sSec;
-		sMin = (sMin.length ==1)? "0" + sMin: sMin;
-		return sMin + ":" + sSec;
+		if (iSeconds > 60){
+			let sMin = ((iSeconds - (iSeconds % 60))/60).toString();
+			let sSec = (iSeconds % 60).toString();
+			sSec = (sSec.length ==1)? "0" + sSec: sSec;
+			sMin = (sMin.length ==1)? "0" + sMin: sMin;
+			return sMin + ":" + sSec;
+		}else{
+			return iSeconds.toString();
+		}
 	};
 
 	const mX = 600;
@@ -54,10 +58,14 @@ sap.ui.define([
 			timerDom.querySelector("#bgCircle").setAttribute("cy",mY + r);
 			timerDom.querySelector("#bgCircle").setAttribute("r",r);
 
-			let exercises = this.getExercises();
+			//timerDom.querySelector("#svgArea").setAttribute("width",Math.min(document.body.clientHeight*0.4,document.body.clientWidth));
+
+			let aExercises = this.getExercises();
 			
-			if (exercises.length > 0){
-				this.getDomRef().querySelector("#timer").innerHTML = timerString(exercises.reduce((a,e)=>a+parseInt(e.duration),0)*1000);
+			if (aExercises.length > 0){
+				this.getDomRef().querySelector("#timer").innerHTML = timerString(aExercises.reduce((a,e)=>a+parseInt(e.duration),0)*1000);
+				this.getDomRef().querySelector("#exerciseInfo").innerHTML = `Exercises ${aExercises.filter(ex=>{ return  ex.vis}).length}`;
+				this.getDomRef().querySelector("#roundInfo").innerHTML = `Rounds ${aExercises[aExercises.length-1].round}`;
 			}
 		},
 
@@ -71,8 +79,9 @@ sap.ui.define([
 			let milliSeconds = aExercises[intervallIndex].duration * 1000;
 			//console.log(`remTime: ${remTime} intervallIndex ${intervallIndex}`)
 			if (start) {
+				intervallIndex=0;
+				milliSeconds = aExercises[intervallIndex].duration * 1000;
 				remTime = milliSeconds;
-				//intervallIndex=0;
 			}
 			let endTime = Date.now() + remTime;
 	
@@ -92,7 +101,8 @@ sap.ui.define([
 				let sArc = `M ${mX - dx} ${mY + r - dy} A ${r} ${r} 0 ${laf} 0 ${mX} ${mY}`
 				timerDom.querySelector("#clockPath").setAttribute("d",sArc);
 				if (remTime < 5000 && aExercises[intervallIndex].id == 0 ){
-					timerDom.querySelector("#exerciseName").innerHTML = "Next: " + aExercises[intervallIndex+1].name;
+					timerDom.querySelector("#nextName").innerHTML = "Next:";
+					timerDom.querySelector("#exerciseName").innerHTML = aExercises[intervallIndex+1].name;
 				}
 				if (remTime <= 0 && intervallIndex < aExercises.length-1){
 					if (intervallIndex % 2){
@@ -102,9 +112,16 @@ sap.ui.define([
 					}
 					timerDom.querySelector("#clockPath").setAttribute("stroke","transparent");
 					this.isRunnung = true;
-					//clearInterval(interval);
 					timerDom.querySelector("#timer").innerHTML = timerString(0);
+
+					timerDom.querySelector("#nextName").innerHTML = "";
 					intervallIndex = intervallIndex + 1;
+					if (aExercises[intervallIndex].vis){
+						timerDom.querySelector("#exerciseInfo").innerHTML = 
+						`Exercise ${aExercises[intervallIndex].id}/${aExercises.filter(ex=>{ return ex.round == aExercises[intervallIndex].round && ex.vis}).length}`;
+						timerDom.querySelector("#roundInfo").innerHTML = 
+						`Round ${aExercises[intervallIndex].round}/${aExercises[aExercises.length-1].round}`;
+					}
 					seconds = Number(aExercises[intervallIndex].duration);
 					milliSeconds = (seconds)? seconds * 1000 : 0;
 					remTime = milliSeconds;
