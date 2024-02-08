@@ -281,7 +281,7 @@
             {"id":0, "round": 2, "name": "Recovery", "duration": 20, "vis":false},{"id":13, "round": 2, "name":"Scissor Kicks", "duration":35,"vis": true, "link":""},
             {"id":0, "round": 2, "name": "Recovery", "duration": 20, "vis":false},{"id":14, "round": 2, "name":"Spiderman Low Planks", "duration":35,"vis": true, "link":""},
             {"id":0, "round": 2, "name": "Recovery", "duration": 20, "vis":false},{"id":15, "round": 2, "name":"Low Side Plank Crunches Left", "duration":40,"vis": true, "link":""},
-            {"id":0, "round": 1, "name": "Recovery", "duration": 20, "vis":false},{"id":16, "round": 2, "name":"Low Side Plank Crunches Right", "duration":40,"vis": true, "link":""},
+            {"id":0, "round": 2, "name": "Recovery", "duration": 20, "vis":false},{"id":16, "round": 2, "name":"Low Side Plank Crunches Right", "duration":40,"vis": true, "link":""},
 
             {"id":0, "round": 3, "name": "Recovery", "duration": 60, "vis":false},{"id":17, "round": 3, "name":"High Plank Crunches", "duration":30,"vis": true, "link":""},
             {"id":0, "round": 3, "name": "Recovery", "duration": 20, "vis":false},{"id":18, "round": 3, "name":"Sit-Ups", "duration":40,"vis": true, "link":""},
@@ -290,7 +290,7 @@
             {"id":0, "round": 3, "name": "Recovery", "duration": 20, "vis":false},{"id":21, "round": 3, "name":"Scissor Kicks", "duration":30,"vis": true, "link":""},
             {"id":0, "round": 3, "name": "Recovery", "duration": 20, "vis":false},{"id":22, "round": 3, "name":"Spiderman Low Planks", "duration":30,"vis": true, "link":""},
             {"id":0, "round": 3, "name": "Recovery", "duration": 20, "vis":false},{"id":23, "round": 3, "name":"Low Side Plank Crunches Left", "duration":35,"vis": true, "link":""},
-            {"id":0, "round": 1, "name": "Recovery", "duration": 20, "vis":false},{"id":24, "round": 3, "name":"Low Side Plank Crunches Right", "duration":35,"vis": true, "link":""}
+            {"id":0, "round": 3, "name": "Recovery", "duration": 20, "vis":false},{"id":24, "round": 3, "name":"Low Side Plank Crunches Right", "duration":35,"vis": true, "link":""}
 
         ]
     },
