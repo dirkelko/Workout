@@ -10,18 +10,24 @@ sap.ui.define([
         },
 
         onRouteMatched: function (oEvent) {
+            var idWorkOut = oEvent.getParameter("arguments").id;
+            var indexWorkOut = this.getView().getModel("workoutsModel").getProperty("/").workouts.findIndex( wo=>{
+                return wo.id == idWorkOut;
+            });            
             this.getView().bindElement({
-                path: "/workouts/" + oEvent.getParameter("arguments").index,
+                path: "/workouts/" + indexWorkOut,
                 model: "workoutsModel"
             });
         },
 
-        startWorkout: function(oContext) {
+        startWorkout: async function(oContext) {
             this.byId("Timer").startClock(true);
             this.byId("startButton").setVisible(false);
             this.byId("stopButton").setVisible(true);
             this.byId("resetButton").setVisible(false);
             this.byId("continueButton").setVisible(false);
+            let screenLock = await navigator.wakeLock.request('screen');
+
             //let sPath = this.getView().getBindingContext("workoutsModel").sPath;
             //let workout = this.getView().getModel("workoutsModel").getProperty(sPath);
         },
@@ -67,7 +73,7 @@ sap.ui.define([
             let iWorkoutIndex = this.getView().getBindingContext("workoutsModel").getProperty(this.getView().getBindingContext("workoutsModel").getPath()).id;
             let iExerciseIndex = oEvent.getSource().getBindingContext("workoutsModel").getProperty("id");        
             //let exerciseLink = oEvent.getSource().getBindingContext("workoutsModel").getProperty("link");        
-			this.getOwnerComponent().getRouter().navTo("RouteVideo", {index: iWorkoutIndex, exerciseIndex: iExerciseIndex,});
+			this.getOwnerComponent().getRouter().navTo("RouteVideo", {id: iWorkoutIndex, exerciseIndex: iExerciseIndex,});
         }
 
     });

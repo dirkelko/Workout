@@ -4,6 +4,7 @@ sap.ui.define([
     "use strict";
 
     var iWorkoutIndex = 0;
+    var idWorkout
 
     return Controller.extend("com.sap.controller.Video", {
 
@@ -12,20 +13,29 @@ sap.ui.define([
         },
 
         onRouteMatched: function (oEvent) {
-            iWorkoutIndex = oEvent.getParameter("arguments").index;
-            var eInd = oEvent.getParameter("arguments").exerciseIndex;
-            var iEx = this.getView().getModel("workoutsModel").getProperty("/workouts/" + oEvent.getParameter("arguments").index).exercises.findIndex( ex=>{
-                return ex.id == eInd
+            idWorkout = oEvent.getParameter("arguments").id;
+            iWorkoutIndex = this.getView().getModel("workoutsModel").getProperty("/").workouts.findIndex( wo=>{
+                return wo.id == idWorkout;
             });            
+
+            let eInd = oEvent.getParameter("arguments").exerciseIndex;
+            let iExInWo = this.getView().getModel("workoutsModel").getProperty("/workouts/" + iWorkoutIndex).exercises.findIndex( ex=>{
+                return ex.id == eInd
+            });
+            let exerciseName = this.getView().getModel("workoutsModel").getProperty("/workouts/" + iWorkoutIndex + "/exercises/" + iExInWo ).name;            
+
+            let iEx = this.getView().getModel("workoutsModel").getProperty("/exercises/").findIndex( ex=>{
+                return ex.name.toUpperCase() == exerciseName.toUpperCase();
+            });
+
             this.getView().bindElement({
-                path: "/workouts/" + oEvent.getParameter("arguments").index + "/exercises/" + iEx,
+                path: "/exercises/" + iEx,
                 model: "workoutsModel"
             });
         },
 
         navToMain: function () {
-			this.getOwnerComponent().getRouter().navTo("RouteWorkout", {index: iWorkoutIndex});
-            //this.getOwnerComponent().getRouter().navTo("main");
+			this.getOwnerComponent().getRouter().navTo("RouteWorkout", {id: idWorkout});
         }
 
     });

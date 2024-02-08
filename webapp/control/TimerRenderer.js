@@ -16,6 +16,7 @@ sap.ui.define([],
 
             oRm.openStart("div", oTimer);
             oRm.style("height", oTimer.getHeight());
+            //oRm.style("width", oTimer.getWidth());
             oRm.class("graphics");
             oRm.openEnd();
             oRm.openStart("svg");
@@ -23,6 +24,12 @@ sap.ui.define([],
             oRm.class("svg");
             oRm.attr("viewBox", "0 0 " + graphicsWidth + " " + graphicsHeight);
             oRm.openEnd();
+            /*oRm.openStart("rect");
+            oRm.attr("width", graphicsWidth);
+            oRm.attr("height", graphicsHeight);
+            oRm.attr("fill", "blue");
+            oRm.openEnd();
+            oRm.close("rect")*/
             oRm.openStart("circle");
             oRm.attr("id", "bgCircle");
             oRm.attr("stroke", "#303030");

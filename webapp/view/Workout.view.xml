@@ -2,6 +2,7 @@
     controllerName="com.sap.workout.controller.Workout"
     displayBlock="true"
     xmlns:mvc="sap.ui.core.mvc"
+    xmlns:core="sap.ui.core"
     xmlns="sap.m"
     xmlns:mc="com.sap.workout.control"
 >
@@ -10,7 +11,7 @@
         title="{workoutsModel>name} Level {workoutsModel>level}"
         showNavButton="true"
         navButtonPress=".navToMain"
-        enableScrolling="false"
+        enableScrolling="true"
     >
         <content>
             <VBox
@@ -23,7 +24,8 @@
                     exercises="{workoutsModel>exercises}"
                     graphicsWidth="1200px"
                     graphicsHeight="1200px"
-                    height="40%"
+                    width="100%"
+                    height="60vh"
                 />
                 <Button
                     width="100%"
@@ -42,9 +44,12 @@
                     press="stopWorkout"
                     visible="false"
                 />
-                <HBox>
+                <HBox
+                    fitContainer="true"
+                    renderType="Bare"
+                >
                     <Button
-                        width="100%"
+                        width="50%"
                         id="continueButton"
                         text="CONTINUE"
                         icon="sap-icon://play"
@@ -52,15 +57,15 @@
                         press="continueWorkout"
                         visible="false"
                     >
-                        <layoutData>
+                        <!--layoutData>
                             <FlexItemData
                                 growFactor="1"
                                 baseSize="0"
                             />
-                        </layoutData>
+                        </layoutData-->
                     </Button>
                     <Button
-                        width="100%"
+                        width="50%"
                         id="resetButton"
                         text="RESET"
                         type="Neutral"
@@ -68,12 +73,12 @@
                         press="resetWorkout"
                         visible="false"
                     >
-                        <layoutData>
+                        <!--layoutData>
                             <FlexItemData
                                 growFactor="1"
                                 baseSize="0"
                             />
-                        </layoutData>
+                        </layoutData-->
                     </Button>
                 </HBox>
                 <ScrollContainer
@@ -85,6 +90,8 @@
                     </layoutData>
                     <Table
                         id="exercisesList"
+                        mode="None"
+                        includeItemInSelection="false"
                         items="{path: 'workoutsModel>exercises', sorter: {path:'round', group:'.getRound', descending: false}}"
                     >
                         <columns>
@@ -108,16 +115,18 @@
                             </Column>
                         </columns>
                         <items>
-                            <ColumnListItem visible="{workoutsModel>vis}">
+                            <ColumnListItem visible="{workoutsModel>vis}" press="handleLinkPress" type="Active">
                                 <cells>
+                                    <!--core:Icon 
+                                        src="sap-icon://video" press="handleLinkPress"/-->
+                                    <!--Text text="{workoutsModel>name}"/-->
                                     <Link
                                         text="{workoutsModel>name}"
                                         press="handleLinkPress"
                                     />
-                                    <!--Text text="{workoutsModel>name}"-->
                                     <Text text="{workoutsModel>duration}" />
                                     <Text text="{workoutsModel>pause}" />
-                                </cells>
+                                  </cells>
                             </ColumnListItem>
                         </items>
                     </Table>

@@ -14,7 +14,7 @@
         enableScrolling="false"
     >
         <content>
-            <core:HTML content='&lt;iframe width="100%" src="{workoutsModel>link}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen&gt;&lt;/iframe&gt;' >
+            <core:HTML content='&lt;iframe width="100%" src="{workoutsModel>link}?rel=0&amp;autoplay=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen&gt;&lt;/iframe&gt;' >
             </core:HTML> 
         </content>
     </Page>

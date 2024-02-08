@@ -93,12 +93,12 @@
 				},
                 {
                     "name": "RouteWorkout",
-                    "pattern": "workout/{index}",
+                    "pattern": "workout/{id}",
                     "target": ["TargetWorkout"]
                 },
 				{
                     "name": "RouteVideo",
-                    "pattern": "workout/{index}/exercise/{exerciseIndex}",
+                    "pattern": "workout/{id}/exercise/{exerciseIndex}",
                     "target": ["TargetVideo"]
                 }			],
 			"targets": {

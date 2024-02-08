@@ -1,4 +1,7 @@
-sap.ui.define(["./BaseController", "sap/m/MessageBox"], function (BaseController, MessageBox) {
+sap.ui.define([
+	"./BaseController",
+	 "sap/ui/model/Filter"
+	], function (BaseController, Filter) {
 	"use strict";
 
 	return BaseController.extend("com.sap.workout.controller.Main", {
@@ -13,20 +16,29 @@ sap.ui.define(["./BaseController", "sap/m/MessageBox"], function (BaseController
 		formatIconColor: function(level){
 			switch (level) {
 				case 1:
-					return "lightgrey";
+					return "Neutral";
 				case 2:
-					return "lightgreen";
+					return "Positive";
 				case 3:
-					return "green";
+					return "#4db1ff";
 				case 4:
 					return "darkgreen";
 				default:
-					return "#000000";
+					return "white";
 			}
 		},
+
+		onLevelSelect: function (oEvent) {
+			this._aCustomerFilters = [];
+			this._aStatusFilters = [];
+
+			var oBinding = this.getView().byId("workoutsList").getBinding("items");
+			oBinding.filter((oEvent.getParameter("key") == "All")?[]:[new Filter("level", "EQ", oEvent.getParameter("key"), false),new Filter("level", "EQ", "ALL", false)]);
+		},
+
 		navToWorkout: function(oEvent) {
-			var iWorkoutIndex = oEvent.getSource().getBindingContext("workoutsModel").getProperty("id");
-			this.getOwnerComponent().getRouter().navTo("RouteWorkout", {index: iWorkoutIndex});
+			var iWorkoutId = oEvent.getSource().getBindingContext("workoutsModel").getProperty("id");
+			this.getOwnerComponent().getRouter().navTo("RouteWorkout", {id: iWorkoutId});
 		}	
 	});
 });

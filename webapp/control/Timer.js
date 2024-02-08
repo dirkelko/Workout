@@ -23,6 +23,9 @@ sap.ui.define([
 	const r = 500;
 	let remTime = 0;
 	let intervallIndex=0;
+	let noSleep;
+    const bellSingle = new Audio('./sounds/BellSingle.m4a');
+    const bellTriple = new Audio('./sounds/BellTriple.m4a');
 
 	let Timer = Control.extend("com.sap.workout.control.Timer", {
 		metadata : {
@@ -39,6 +42,8 @@ sap.ui.define([
 		isRunnung : false,
 		
 		init : function () {  
+			noSleep = new NoSleep();
+
 			//this.tires = {};
 		},
 
@@ -74,6 +79,8 @@ sap.ui.define([
 			const dt = 50; //timer intervall for clock path
 			const timerDom = this.getDomRef(); 
 
+			noSleep.enable();
+
 			let aExercises = this.getExercises();
 			let seconds = aExercises[intervallIndex].duration;
 			let milliSeconds = aExercises[intervallIndex].duration * 1000;
@@ -106,9 +113,9 @@ sap.ui.define([
 				}
 				if (remTime <= 0 && intervallIndex < aExercises.length-1){
 					if (intervallIndex % 2){
-						//bellTriple.play();
+						bellTriple.play();
 					}else{
-						//bellSingle.play();
+						bellSingle.play();
 					}
 					timerDom.querySelector("#clockPath").setAttribute("stroke","transparent");
 					this.isRunnung = true;
@@ -142,6 +149,7 @@ sap.ui.define([
 			//const timerDom = this.getDomRef(); 
 			clearInterval(this.interval);
 			this.isRunnung = false;
+			noSleep.disable();
 		},
 
 		resetClock : function(){
