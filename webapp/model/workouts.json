@@ -281,7 +281,7 @@
             {"id":0, "round": 2, "name": "Recovery", "duration": 20, "vis":false},{"id":13, "round": 2, "name":"Scissor Kicks", "duration":35,"vis": true, "link":""},
             {"id":0, "round": 2, "name": "Recovery", "duration": 20, "vis":false},{"id":14, "round": 2, "name":"Spiderman Low Planks", "duration":35,"vis": true, "link":""},
             {"id":0, "round": 2, "name": "Recovery", "duration": 20, "vis":false},{"id":15, "round": 2, "name":"Low Side Plank Crunches Left", "duration":40,"vis": true, "link":""},
-            {"id":0, "round": 1, "name": "Recovery", "duration": 20, "vis":false},{"id":16, "round": 1, "name":"Low Side Plank Crunches Right", "duration":40,"vis": true, "link":""},
+            {"id":0, "round": 1, "name": "Recovery", "duration": 20, "vis":false},{"id":16, "round": 2, "name":"Low Side Plank Crunches Right", "duration":40,"vis": true, "link":""},
 
             {"id":0, "round": 3, "name": "Recovery", "duration": 60, "vis":false},{"id":17, "round": 3, "name":"High Plank Crunches", "duration":30,"vis": true, "link":""},
             {"id":0, "round": 3, "name": "Recovery", "duration": 20, "vis":false},{"id":18, "round": 3, "name":"Sit-Ups", "duration":40,"vis": true, "link":""},
@@ -290,7 +290,7 @@
             {"id":0, "round": 3, "name": "Recovery", "duration": 20, "vis":false},{"id":21, "round": 3, "name":"Scissor Kicks", "duration":30,"vis": true, "link":""},
             {"id":0, "round": 3, "name": "Recovery", "duration": 20, "vis":false},{"id":22, "round": 3, "name":"Spiderman Low Planks", "duration":30,"vis": true, "link":""},
             {"id":0, "round": 3, "name": "Recovery", "duration": 20, "vis":false},{"id":23, "round": 3, "name":"Low Side Plank Crunches Left", "duration":35,"vis": true, "link":""},
-            {"id":0, "round": 1, "name": "Recovery", "duration": 20, "vis":false},{"id":24, "round": 1, "name":"Low Side Plank Crunches Right", "duration":35,"vis": true, "link":""}
+            {"id":0, "round": 1, "name": "Recovery", "duration": 20, "vis":false},{"id":24, "round": 3, "name":"Low Side Plank Crunches Right", "duration":35,"vis": true, "link":""}
 
         ]
     },
@@ -314,14 +314,14 @@
 
             {"id":0, "round": 2, "name": "Start in", "duration": 60, "vis":false},{"id":1, "round": 2, "name":"Skipping Sprawls", "duration":45,"vis": true, "link":""},
             {"id":0, "round": 2, "name": "Recovery", "duration": 20, "vis":false},{"id":2, "round": 2, "name":"High Side Knees", "duration":45,"vis": true, "link":""},
-            {"id":0, "round": 2, "name": "Recovery", "duration": 20, "vis":false},{"id":3, "round": 2, "name":"Inchworm MMA Push-Ups", "duration":45,"vis": true, "link":""},
+            {"id":0, "round": 2, "name": "Recovery", "duration": 20, "vis":false},{"id":3, "round": 2, "name":"Inchworm MMA Push-Ups", "duration":35,"vis": true, "link":""},
             {"id":0, "round": 2, "name": "Recovery", "duration": 20, "vis":false},{"id":4, "round": 2, "name":"Front Kicks", "duration":45,"vis": true, "link":""},
             {"id":0, "round": 2, "name": "Recovery", "duration": 20, "vis":false},{"id":5, "round": 2, "name":"Spiderman Low Planks", "duration":35,"vis": true, "link":""},
             {"id":0, "round": 2, "name": "Recovery", "duration": 20, "vis":false},{"id":6, "round": 2, "name":"Frog Jump Sprawls", "duration":45,"vis": true, "link":""},
             {"id":0, "round": 2, "name": "Recovery", "duration": 20, "vis":false},{"id":7, "round": 2, "name":"Russian Sit-Ups", "duration":45,"vis": true, "link":""},
             {"id":0, "round": 2, "name": "Recovery", "duration": 20, "vis":false},{"id":8, "round": 2, "name":"Mountain Runners", "duration":45,"vis": true, "link":""},
             {"id":0, "round": 2, "name": "Recovery", "duration": 20, "vis":false},{"id":9, "round": 2, "name":"Burpees", "duration":45,"vis": true, "link":""},
-            {"id":0, "round": 2, "name": "Recovery", "duration": 20, "vis":false},{"id":10, "round": 2, "name":"Jump Lunges", "duration":45,"vis": true, "link":""}
+            {"id":0, "round": 2, "name": "Recovery", "duration": 20, "vis":false},{"id":10, "round": 2, "name":"Jump Lunges", "duration":30,"vis": true, "link":""}
 
         ]
     },
