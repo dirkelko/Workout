@@ -81,6 +81,8 @@
                         </layoutData-->
                     </Button>
                 </HBox>
+            <core:HTML content='&lt;iframe width="100%" src="https://www.youtube.com/embed/opobCUeSBnE?si=UWd2eeY4k1EL_m7a?rel=0&amp;autoplay=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen&gt;&lt;/iframe&gt;' >
+            </core:HTML> 
                 <ScrollContainer
                     height="100%"
                     vertical="true"
