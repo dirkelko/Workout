@@ -225,7 +225,7 @@
             {"id":0, "round": 3, "name": "Recovery", "duration": 20, "vis":false},{"id":21, "round": 3, "name":"Russian Sit-Ups", "duration":30,"vis": true, "link":""},
             {"id":0, "round": 3, "name": "Recovery", "duration": 20, "vis":false},{"id":22, "round": 3, "name":"T Low Planks", "duration":30,"vis": true, "link":""},
             {"id":0, "round": 3, "name": "Recovery", "duration": 20, "vis":false},{"id":23, "round": 3, "name":"Leg Raises", "duration":30,"vis": true, "link":""},
-            {"id":0, "round": 3, "name": "Recovery", "duration": 20, "vis":false},{"id":23, "round": 3, "name":"Spiderman Low Planks", "duration":30,"vis": true, "link":""}
+            {"id":0, "round": 3, "name": "Recovery", "duration": 20, "vis":false},{"id":24, "round": 3, "name":"Spiderman Low Planks", "duration":30,"vis": true, "link":""}
 
         ]
     },
@@ -262,8 +262,8 @@
             {"id":0, "round": 3, "name": "Recovery", "duration": 20, "vis":false},{"id":21, "round": 3, "name":"Russian Sit-Ups Straight Legs", "duration":30,"vis": true, "link":""},
             {"id":0, "round": 3, "name": "Recovery", "duration": 20, "vis":false},{"id":22, "round": 3, "name":"T Low Planks", "duration":30,"vis": true, "link":""},
             {"id":0, "round": 3, "name": "Recovery", "duration": 20, "vis":false},{"id":23, "round": 3, "name":"Sitting Leg Raises", "duration":30,"vis": true, "link":""},
-            {"id":0, "round": 3, "name": "Recovery", "duration": 20, "vis":false},{"id":23, "round": 3, "name":"Spiderman Low Planks", "duration":30,"vis": true, "link":""},
-            {"id":0, "round": 3, "name": "Recovery", "duration": 20, "vis":false},{"id":23, "round": 3, "name":"MMA Push-Ups", "duration":30,"vis": true, "link":""}
+            {"id":0, "round": 3, "name": "Recovery", "duration": 20, "vis":false},{"id":24, "round": 3, "name":"Spiderman Low Planks", "duration":30,"vis": true, "link":""},
+            {"id":0, "round": 3, "name": "Recovery", "duration": 20, "vis":false},{"id":25, "round": 3, "name":"MMA Push-Ups", "duration":30,"vis": true, "link":""}
 
         ]
     },
