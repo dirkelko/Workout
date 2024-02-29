@@ -201,7 +201,7 @@
         "exercises":[
             {"id":0, "round": 1, "name": "Start in", "duration": 10, "vis":false},{"id":1, "round": 1, "name":"Skipping Burpees", "duration":60,"vis": true, "link":""},
             {"id":0, "round": 1, "name": "Recovery", "duration": 20, "vis":false},{"id":2, "round": 1, "name":"Low Side Plank Crunches Left", "duration":35,"vis": true, "link":""},
-            {"id":0, "round": 1, "name": "Recovery", "duration": 20, "vis":false},{"id":3, "round": 1, "name":"Low Side Plank Crunches Right", "duration":35,"vis": true, "link":""},
+            {"id":0, "round": 1, "name": "Recovery", "duration": 10, "vis":false},{"id":3, "round": 1, "name":"Low Side Plank Crunches Right", "duration":35,"vis": true, "link":""},
             {"id":0, "round": 1, "name": "Recovery", "duration": 20, "vis":false},{"id":4, "round": 1, "name":"Front Kick Burpees", "duration":60,"vis": true, "link":""},
             {"id":0, "round": 1, "name": "Recovery", "duration": 20, "vis":false},{"id":5, "round": 1, "name":"Low Plank Side Steps", "duration":40,"vis": true, "link":""},
             {"id":0, "round": 1, "name": "Recovery", "duration": 20, "vis":false},{"id":6, "round": 1, "name":"T Low Planks", "duration":40,"vis": true, "link":""},
@@ -209,7 +209,7 @@
 
             {"id":0, "round": 2, "name": "Recovery", "duration": 60, "vis":false},{"id":9, "round": 2, "name":"Skipping Burpees", "duration":50,"vis": true, "link":""},
             {"id":0, "round": 2, "name": "Recovery", "duration": 20, "vis":false},{"id":10, "round": 2, "name":"Low Side Plank Crunches Left", "duration":35,"vis": true, "link":""},
-            {"id":0, "round": 2, "name": "Recovery", "duration": 20, "vis":false},{"id":11, "round": 2, "name":"Low Side Plank Crunches Right", "duration":35,"vis": true, "link":""},
+            {"id":0, "round": 2, "name": "Recovery", "duration": 10, "vis":false},{"id":11, "round": 2, "name":"Low Side Plank Crunches Right", "duration":35,"vis": true, "link":""},
             {"id":0, "round": 2, "name": "Recovery", "duration": 20, "vis":false},{"id":12, "round": 2, "name":"Front Kick Burpees", "duration":50,"vis": true, "link":""},
             {"id":0, "round": 2, "name": "Recovery", "duration": 20, "vis":false},{"id":13, "round": 2, "name":"Low Plank Side Steps", "duration":40,"vis": true, "link":""},
             {"id":0, "round": 2, "name": "Recovery", "duration": 20, "vis":false},{"id":14, "round": 2, "name":"T Low Planks", "duration":40,"vis": true, "link":""},
@@ -217,7 +217,7 @@
 
             {"id":0, "round": 3, "name": "Recovery", "duration": 60, "vis":false},{"id":17, "round": 3, "name":"Skipping Burpees", "duration":40,"vis": true, "link":""},
             {"id":0, "round": 3, "name": "Recovery", "duration": 20, "vis":false},{"id":18, "round": 3, "name":"Low Side Plank Crunches Left", "duration":35,"vis": true, "link":""},
-            {"id":0, "round": 3, "name": "Recovery", "duration": 20, "vis":false},{"id":19, "round": 3, "name":"Low Side Plank Crunches Right", "duration":35,"vis": true, "link":""},
+            {"id":0, "round": 3, "name": "Recovery", "duration": 10, "vis":false},{"id":19, "round": 3, "name":"Low Side Plank Crunches Right", "duration":35,"vis": true, "link":""},
             {"id":0, "round": 3, "name": "Recovery", "duration": 20, "vis":false},{"id":20, "round": 3, "name":"Front Kick Burpees", "duration":40,"vis": true, "link":""},
             {"id":0, "round": 3, "name": "Recovery", "duration": 20, "vis":false},{"id":21, "round": 3, "name":"Low Plank Side Steps", "duration":40,"vis": true, "link":""},
             {"id":0, "round": 3, "name": "Recovery", "duration": 20, "vis":false},{"id":22, "round": 3, "name":"T Low Planks", "duration":40,"vis": true, "link":""},
@@ -234,7 +234,7 @@
         "exercises":[
             {"id":0, "round": 1, "name": "Start in", "duration": 10, "vis":false},{"id":1, "round": 1, "name":"Skipping Tuck Jump Burpees", "duration":60,"vis": true, "link":""},
             {"id":0, "round": 1, "name": "Recovery", "duration": 20, "vis":false},{"id":2, "round": 1, "name":"Low Side Plank Crunches Left", "duration":35,"vis": true, "link":""},
-            {"id":0, "round": 1, "name": "Recovery", "duration": 20, "vis":false},{"id":3, "round": 1, "name":"Low Side Plank Crunches Right", "duration":35,"vis": true, "link":""},
+            {"id":0, "round": 1, "name": "Recovery", "duration": 10, "vis":false},{"id":3, "round": 1, "name":"Low Side Plank Crunches Right", "duration":35,"vis": true, "link":""},
             {"id":0, "round": 1, "name": "Recovery", "duration": 20, "vis":false},{"id":4, "round": 1, "name":"Front Kick Burpees", "duration":60,"vis": true, "link":""},
             {"id":0, "round": 1, "name": "Recovery", "duration": 20, "vis":false},{"id":5, "round": 1, "name":"Low Plank Jacks", "duration":40,"vis": true, "link":""},
             {"id":0, "round": 1, "name": "Recovery", "duration": 20, "vis":false},{"id":6, "round": 1, "name":"T Side Star High Plank", "duration":40,"vis": true, "link":""},
@@ -242,7 +242,7 @@
 
             {"id":0, "round": 2, "name": "Recovery", "duration": 60, "vis":false},{"id":9, "round": 2, "name":"Skipping Tuck Jump Burpees", "duration":50,"vis": true, "link":""},
             {"id":0, "round": 2, "name": "Recovery", "duration": 20, "vis":false},{"id":10, "round": 2, "name":"Low Side Plank Crunches Left", "duration":35,"vis": true, "link":""},
-            {"id":0, "round": 2, "name": "Recovery", "duration": 20, "vis":false},{"id":11, "round": 2, "name":"Low Side Plank Crunches Right", "duration":35,"vis": true, "link":""},
+            {"id":0, "round": 2, "name": "Recovery", "duration": 10, "vis":false},{"id":11, "round": 2, "name":"Low Side Plank Crunches Right", "duration":35,"vis": true, "link":""},
             {"id":0, "round": 2, "name": "Recovery", "duration": 20, "vis":false},{"id":12, "round": 2, "name":"Front Kick Burpees", "duration":50,"vis": true, "link":""},
             {"id":0, "round": 2, "name": "Recovery", "duration": 20, "vis":false},{"id":13, "round": 2, "name":"Low Plank Jacks", "duration":40,"vis": true, "link":""},
             {"id":0, "round": 2, "name": "Recovery", "duration": 20, "vis":false},{"id":14, "round": 2, "name":"T Side Star High Plank", "duration":40,"vis": true, "link":""},
@@ -250,7 +250,7 @@
 
             {"id":0, "round": 3, "name": "Recovery", "duration": 60, "vis":false},{"id":17, "round": 3, "name":"Skipping Tuck Jump Burpees", "duration":40,"vis": true, "link":""},
             {"id":0, "round": 3, "name": "Recovery", "duration": 20, "vis":false},{"id":18, "round": 3, "name":"Low Side Plank Crunches Left", "duration":35,"vis": true, "link":""},
-            {"id":0, "round": 3, "name": "Recovery", "duration": 20, "vis":false},{"id":19, "round": 3, "name":"Low Side Plank Crunches Right", "duration":35,"vis": true, "link":""},
+            {"id":0, "round": 3, "name": "Recovery", "duration": 10, "vis":false},{"id":19, "round": 3, "name":"Low Side Plank Crunches Right", "duration":35,"vis": true, "link":""},
             {"id":0, "round": 3, "name": "Recovery", "duration": 20, "vis":false},{"id":20, "round": 3, "name":"Front Kick Burpees", "duration":40,"vis": true, "link":""},
             {"id":0, "round": 3, "name": "Recovery", "duration": 20, "vis":false},{"id":21, "round": 3, "name":"Low Plank Jacks", "duration":40,"vis": true, "link":""},
             {"id":0, "round": 3, "name": "Recovery", "duration": 20, "vis":false},{"id":22, "round": 3, "name":"T Side Star High Plank", "duration":40,"vis": true, "link":""},
