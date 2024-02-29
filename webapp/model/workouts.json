@@ -525,7 +525,7 @@
             {"id":0, "round": 1, "name": "Recovery", "duration": 20, "vis":false},{"id":4, "round": 1, "name":"Low Plank-Ups", "duration":45,"vis": true, "link":""},
             {"id":0, "round": 1, "name": "Recovery", "duration": 20, "vis":false},{"id":5, "round": 1, "name":"Superman", "duration":45,"vis": true, "link":""},
             {"id":0, "round": 1, "name": "Recovery", "duration": 20, "vis":false},{"id":6, "round": 1, "name":"Low Side Plank Twist Left", "duration":45,"vis": true, "link":""},
-            {"id":0, "round": 1, "name": "Recovery", "duration": 20, "vis":false},{"id":7, "round": 1, "name":"Low Side Plank Twist Right", "duration":45,"vis": true, "link":""},
+            {"id":0, "round": 1, "name": "Recovery", "duration": 10, "vis":false},{"id":7, "round": 1, "name":"Low Side Plank Twist Right", "duration":45,"vis": true, "link":""},
 
             {"id":0, "round": 2, "name": "Recovery", "duration": 60, "vis":false},{"id":8, "round": 2, "name":"High Plank Feet Tap Superman", "duration":45,"vis": true, "link":""},
             {"id":0, "round": 2, "name": "Recovery", "duration": 20, "vis":false},{"id":9, "round": 2, "name":"Arms & Legs Scissors", "duration":45,"vis": true, "link":""},
@@ -533,7 +533,7 @@
             {"id":0, "round": 2, "name": "Recovery", "duration": 20, "vis":false},{"id":11, "round": 2, "name":"Low Plank-Ups", "duration":45,"vis": true, "link":""},
             {"id":0, "round": 2, "name": "Recovery", "duration": 20, "vis":false},{"id":12, "round": 2, "name":"Superman", "duration":45,"vis": true, "link":""},
             {"id":0, "round": 2, "name": "Recovery", "duration": 20, "vis":false},{"id":13, "round": 2, "name":"Low Side Plank Twist Left", "duration":45,"vis": true, "link":""},
-            {"id":0, "round": 2, "name": "Recovery", "duration": 20, "vis":false},{"id":14, "round": 2, "name":"Low Side Plank Twist Right", "duration":45,"vis": true, "link":""},
+            {"id":0, "round": 2, "name": "Recovery", "duration": 10, "vis":false},{"id":14, "round": 2, "name":"Low Side Plank Twist Right", "duration":45,"vis": true, "link":""},
 
             {"id":0, "round": 3, "name": "Recovery", "duration": 60, "vis":false},{"id":15, "round": 3, "name":"High Plank Feet Tap Superman", "duration":45,"vis": true, "link":""},
             {"id":0, "round": 3, "name": "Recovery", "duration": 20, "vis":false},{"id":16, "round": 3, "name":"Arms & Legs Scissors", "duration":45,"vis": true, "link":""},
@@ -541,7 +541,7 @@
             {"id":0, "round": 3, "name": "Recovery", "duration": 20, "vis":false},{"id":18, "round": 3, "name":"Low Plank-Ups", "duration":45,"vis": true, "link":""},
             {"id":0, "round": 3, "name": "Recovery", "duration": 20, "vis":false},{"id":19, "round": 3, "name":"Superman", "duration":45,"vis": true, "link":""},
             {"id":0, "round": 3, "name": "Recovery", "duration": 20, "vis":false},{"id":20, "round": 3, "name":"Low Side Plank Twist Left", "duration":45,"vis": true, "link":""},
-            {"id":0, "round": 3, "name": "Recovery", "duration": 20, "vis":false},{"id":21, "round": 3, "name":"Low Side Plank Twist Right", "duration":45,"vis": true, "link":""}
+            {"id":0, "round": 3, "name": "Recovery", "duration": 10, "vis":false},{"id":21, "round": 3, "name":"Low Side Plank Twist Right", "duration":45,"vis": true, "link":""}
         ]
     }            
 ],
