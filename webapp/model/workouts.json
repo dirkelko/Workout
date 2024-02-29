@@ -193,6 +193,81 @@
         ]
     },
     {
+        "id":"floyd2",
+        "name":"Floyd",
+        "level": 2,
+        "for": "Bauch",
+        "roundsExercises": "3x8+1",
+        "exercises":[
+            {"id":0, "round": 1, "name": "Start in", "duration": 10, "vis":false},{"id":1, "round": 1, "name":"Inchworm MMA Push-Ups", "duration":45,"vis": true, "link":""},
+            {"id":0, "round": 1, "name": "Recovery", "duration": 20, "vis":false},{"id":2, "round": 1, "name":"Sit-Ups", "duration":45,"vis": true, "link":""},
+            {"id":0, "round": 1, "name": "Recovery", "duration": 20, "vis":false},{"id":3, "round": 1, "name":"Low Plank Side Steps", "duration":35,"vis": true, "link":""},
+            {"id":0, "round": 1, "name": "Recovery", "duration": 20, "vis":false},{"id":4, "round": 1, "name":"Windshield Wipers", "duration":45,"vis": true, "link":""},
+            {"id":0, "round": 1, "name": "Recovery", "duration": 20, "vis":false},{"id":5, "round": 1, "name":"Mountain Climbers", "duration":45,"vis": true, "link":""},
+            {"id":0, "round": 1, "name": "Recovery", "duration": 20, "vis":false},{"id":5, "round": 1, "name":"Russian Sit-Ups", "duration":45,"vis": true, "link":""},
+            {"id":0, "round": 1, "name": "Recovery", "duration": 20, "vis":false},{"id":6, "round": 1, "name":"T Low Planks", "duration":45,"vis": true, "link":""},
+            {"id":0, "round": 1, "name": "Recovery", "duration": 20, "vis":false},{"id":7, "round": 1, "name":"Easy Leg Raises", "duration":45,"vis": true, "link":""},
+
+            {"id":0, "round": 2, "name": "Recovery", "duration": 60, "vis":false},{"id":9, "round": 2, "name":"Inchworm MMA Push-Ups", "duration":45,"vis": true, "link":""},
+            {"id":0, "round": 2, "name": "Recovery", "duration": 20, "vis":false},{"id":10, "round": 2, "name":"Sit-Ups", "duration":45,"vis": true, "link":""},
+            {"id":0, "round": 2, "name": "Recovery", "duration": 20, "vis":false},{"id":11, "round": 2, "name":"Low Plank Side Steps", "duration":35,"vis": true, "link":""},
+            {"id":0, "round": 2, "name": "Recovery", "duration": 20, "vis":false},{"id":12, "round": 2, "name":"Windshield Wipers", "duration":50,"vis": true, "link":""},
+            {"id":0, "round": 2, "name": "Recovery", "duration": 20, "vis":false},{"id":13, "round": 2, "name":"Mountain Climbers", "duration":45,"vis": true, "link":""},
+            {"id":0, "round": 2, "name": "Recovery", "duration": 20, "vis":false},{"id":13, "round": 2, "name":"Russian Sit-Ups", "duration":45,"vis": true, "link":""},
+            {"id":0, "round": 2, "name": "Recovery", "duration": 20, "vis":false},{"id":14, "round": 2, "name":"T Low Planks", "duration":45,"vis": true, "link":""},
+            {"id":0, "round": 2, "name": "Recovery", "duration": 20, "vis":false},{"id":15, "round": 2, "name":"Easy Leg Raises", "duration":45,"vis": true, "link":""},
+
+            {"id":0, "round": 3, "name": "Recovery", "duration": 60, "vis":false},{"id":17, "round": 3, "name":"Inchworm MMA Push-Ups", "duration":30,"vis": true, "link":""},
+            {"id":0, "round": 3, "name": "Recovery", "duration": 20, "vis":false},{"id":18, "round": 3, "name":"Sit-Ups", "duration":30,"vis": true, "link":""},
+            {"id":0, "round": 3, "name": "Recovery", "duration": 20, "vis":false},{"id":19, "round": 3, "name":"Low Plank Jacks", "duration":30,"vis": true, "link":""},
+            {"id":0, "round": 3, "name": "Recovery", "duration": 20, "vis":false},{"id":20, "round": 3, "name":"Windshield Wipers", "duration":30,"vis": true, "link":""},
+            {"id":0, "round": 3, "name": "Recovery", "duration": 20, "vis":false},{"id":21, "round": 3, "name":"Mountain Climbers Pylo Spider", "duration":30,"vis": true, "link":""},
+            {"id":0, "round": 3, "name": "Recovery", "duration": 20, "vis":false},{"id":21, "round": 3, "name":"Russian Sit-Ups", "duration":30,"vis": true, "link":""},
+            {"id":0, "round": 3, "name": "Recovery", "duration": 20, "vis":false},{"id":22, "round": 3, "name":"T Low Planks", "duration":30,"vis": true, "link":""},
+            {"id":0, "round": 3, "name": "Recovery", "duration": 20, "vis":false},{"id":23, "round": 3, "name":"Leg Raises", "duration":30,"vis": true, "link":""},
+            {"id":0, "round": 3, "name": "Recovery", "duration": 20, "vis":false},{"id":23, "round": 3, "name":"Spiderman Low Planks", "duration":30,"vis": true, "link":""}
+
+        ]
+    },
+    {
+        "id":"floyd3",
+        "name":"Floyd",
+        "level": 3,
+        "for": "Bauch",
+        "roundsExercises": "3x8+2",
+        "exercises":[
+            {"id":0, "round": 1, "name": "Start in", "duration": 10, "vis":false},{"id":1, "round": 1, "name":"Inchworm Push-Ups", "duration":45,"vis": true, "link":""},
+            {"id":0, "round": 1, "name": "Recovery", "duration": 20, "vis":false},{"id":2, "round": 1, "name":"Knee Tuck Crunches", "duration":45,"vis": true, "link":""},
+            {"id":0, "round": 1, "name": "Recovery", "duration": 20, "vis":false},{"id":3, "round": 1, "name":"Low Plank Jacks", "duration":35,"vis": true, "link":""},
+            {"id":0, "round": 1, "name": "Recovery", "duration": 20, "vis":false},{"id":4, "round": 1, "name":"Sitting Windshield Wipers", "duration":45,"vis": true, "link":""},
+            {"id":0, "round": 1, "name": "Recovery", "duration": 20, "vis":false},{"id":5, "round": 1, "name":"Mountain Climbers Pylo Spider", "duration":45,"vis": true, "link":""},
+            {"id":0, "round": 1, "name": "Recovery", "duration": 20, "vis":false},{"id":5, "round": 1, "name":"Russian Sit-Ups Straight Legs", "duration":45,"vis": true, "link":""},
+            {"id":0, "round": 1, "name": "Recovery", "duration": 20, "vis":false},{"id":6, "round": 1, "name":"T Push-Ups", "duration":45,"vis": true, "link":""},
+            {"id":0, "round": 1, "name": "Recovery", "duration": 20, "vis":false},{"id":7, "round": 1, "name":"Leg Raises", "duration":45,"vis": true, "link":""},
+
+            {"id":0, "round": 2, "name": "Recovery", "duration": 60, "vis":false},{"id":9, "round": 2, "name":"Inchworm Push-Ups", "duration":45,"vis": true, "link":""},
+            {"id":0, "round": 2, "name": "Recovery", "duration": 20, "vis":false},{"id":10, "round": 2, "name":"Knee Tuck Crunches", "duration":45,"vis": true, "link":""},
+            {"id":0, "round": 2, "name": "Recovery", "duration": 20, "vis":false},{"id":11, "round": 2, "name":"Low Plank Jacks", "duration":35,"vis": true, "link":""},
+            {"id":0, "round": 2, "name": "Recovery", "duration": 20, "vis":false},{"id":12, "round": 2, "name":"Sitting Windshield Wipers", "duration":50,"vis": true, "link":""},
+            {"id":0, "round": 2, "name": "Recovery", "duration": 20, "vis":false},{"id":13, "round": 2, "name":"Mountain Climbers Pylo Spider", "duration":45,"vis": true, "link":""},
+            {"id":0, "round": 2, "name": "Recovery", "duration": 20, "vis":false},{"id":13, "round": 2, "name":"Russian Sit-Ups Straight Legs", "duration":45,"vis": true, "link":""},
+            {"id":0, "round": 2, "name": "Recovery", "duration": 20, "vis":false},{"id":14, "round": 2, "name":"T Push-Ups", "duration":45,"vis": true, "link":""},
+            {"id":0, "round": 2, "name": "Recovery", "duration": 20, "vis":false},{"id":15, "round": 2, "name":"Leg Raises", "duration":45,"vis": true, "link":""},
+
+            {"id":0, "round": 3, "name": "Recovery", "duration": 60, "vis":false},{"id":17, "round": 3, "name":"One Handed Sprawls", "duration":30,"vis": true, "link":""},
+            {"id":0, "round": 3, "name": "Recovery", "duration": 20, "vis":false},{"id":18, "round": 3, "name":"Knee Tuck Crunches", "duration":30,"vis": true, "link":""},
+            {"id":0, "round": 3, "name": "Recovery", "duration": 20, "vis":false},{"id":19, "round": 3, "name":"Low Plank Hand Jacks", "duration":30,"vis": true, "link":""},
+            {"id":0, "round": 3, "name": "Recovery", "duration": 20, "vis":false},{"id":20, "round": 3, "name":"Sitting Windshield Wipers", "duration":30,"vis": true, "link":""},
+            {"id":0, "round": 3, "name": "Recovery", "duration": 20, "vis":false},{"id":21, "round": 3, "name":"Mountain Climbers Pylo Spider", "duration":45,"vis": true, "link":""},
+            {"id":0, "round": 3, "name": "Recovery", "duration": 20, "vis":false},{"id":21, "round": 3, "name":"Russian Sit-Ups Straight Legs", "duration":30,"vis": true, "link":""},
+            {"id":0, "round": 3, "name": "Recovery", "duration": 20, "vis":false},{"id":22, "round": 3, "name":"T Low Planks", "duration":30,"vis": true, "link":""},
+            {"id":0, "round": 3, "name": "Recovery", "duration": 20, "vis":false},{"id":23, "round": 3, "name":"Sitting Leg Raises", "duration":30,"vis": true, "link":""},
+            {"id":0, "round": 3, "name": "Recovery", "duration": 20, "vis":false},{"id":23, "round": 3, "name":"Spiderman Low Planks", "duration":30,"vis": true, "link":""},
+            {"id":0, "round": 3, "name": "Recovery", "duration": 20, "vis":false},{"id":23, "round": 3, "name":"MMA Push-Ups", "duration":30,"vis": true, "link":""}
+
+        ]
+    },
+    {
         "id":"hank2",
         "name":"Hank",
         "level": 2,
@@ -386,9 +461,9 @@
 
             {"id":0, "round": 1, "name": "Recovery", "duration": 60, "vis":false},{"id":19, "round": 4, "name":"MMA Push-Up Sprawls", "duration":35,"vis": true},
             {"id":0, "round": 1, "name": "Recovery", "duration": 20, "vis":false},{"id":20, "round": 4, "name":"Sit-Ups", "duration":35,"vis": true},
-            {"id":0, "round": 1, "name": "Recovery", "duration": 20, "vis":false},{"id":21, "round": 4, "name":"Standups", "duration":35,"vis": true},
-            {"id":0, "round": 1, "name": "Recovery", "duration": 20, "vis":false},{"id":22, "round": 4, "name":"Easy Leg Raises", "duration":35,"vis": true},
-            {"id":0, "round": 1, "name": "Recovery", "duration": 20, "vis":false},{"id":23, "round": 4, "name":"Frog Jump Sprawls", "duration":35,"vis": true},
+            {"id":0, "round": 1, "name": "Recovery", "duration": 20, "vis":false},{"id":21, "round": 4, "name":"Easy Standups", "duration":35,"vis": true},
+            {"id":0, "round": 1, "name": "Recovery", "duration": 20, "vis":false},{"id":22, "round": 4, "name":"Leg Raises", "duration":35,"vis": true},
+            {"id":0, "round": 1, "name": "Recovery", "duration": 20, "vis":false},{"id":23, "round": 4, "name":"Frog Jump Burpees", "duration":35,"vis": true},
             {"id":0, "round": 1, "name": "Recovery", "duration": 20, "vis":false},{"id":24, "round": 4, "name":"Windshield Wipers", "duration":35,"vis": true}
         ]
     },
