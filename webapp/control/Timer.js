@@ -47,9 +47,18 @@ sap.ui.define([
 			//this.tires = {};
 		},
 
+		reset : function(){
+			remTime = 0;
+			intervallIndex=0;
+			this.invalidate();		
+		},
+
 
 		onBeforeRendering : function () {  
 			//let oModel = this.getModel("workoutsModel");
+			for (let i = 0; i < this.getExercises().length; i ++){
+				this.getModel("workoutsModel").setProperty( this.getBinding('exercises').getContext().getPath() + "/exercises/" + i + "/current","None");
+			}						
 		},
 		
 		onAfterRendering : function () {
@@ -78,6 +87,8 @@ sap.ui.define([
 
 			const dt = 50; //timer intervall for clock path
 			const timerDom = this.getDomRef(); 
+			const sPath = this.getBinding('exercises').getContext().getPath();
+			let formerIntervallIndex = 0;
 
 			noSleep.enable();
 
@@ -91,6 +102,8 @@ sap.ui.define([
 				remTime = milliSeconds;
 			}
 			let endTime = Date.now() + remTime;
+
+			let that = this;
 	
 			this.interval = setInterval(function(){
 				remTime = endTime - Date.now();
@@ -124,10 +137,19 @@ sap.ui.define([
 					timerDom.querySelector("#nextName").innerHTML = "";
 					intervallIndex = intervallIndex + 1;
 					if (aExercises[intervallIndex].vis){
+						//aExercises[intervallIndex].current = "Warning";
+						that.getModel("workoutsModel").setProperty( sPath + "/exercises/" + formerIntervallIndex + "/current","Success");
+						that.getModel("workoutsModel").setProperty( sPath + "/exercises/" + intervallIndex + "/current","Warning");
+						formerIntervallIndex = intervallIndex;
+						let e = that.getExercises();
+
+						//this.setExercises(aExercises);
 						timerDom.querySelector("#exerciseInfo").innerHTML = 
 						`Exercise ${aExercises[intervallIndex].id}/${aExercises.filter(ex=>{ return ex.round == aExercises[intervallIndex].round && ex.vis}).length}`;
 						timerDom.querySelector("#roundInfo").innerHTML = 
 						`Round ${aExercises[intervallIndex].round}/${aExercises[aExercises.length-1].round}`;
+					}else{
+						that.getModel("workoutsModel").setProperty( sPath + "/exercises/" + formerIntervallIndex + "/current","Success");
 					}
 					seconds = Number(aExercises[intervallIndex].duration);
 					milliSeconds = (seconds)? seconds * 1000 : 0;

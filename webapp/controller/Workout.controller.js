@@ -61,6 +61,8 @@ sap.ui.define([
 
         navToMain: function () {
             this.byId("Timer").stopClock();
+            this.byId("Timer").resetClock();
+            this.byId("Timer").reset();
             this.byId("startButton").setVisible(true);
             this.byId("stopButton").setVisible(false);
             this.byId("resetButton").setVisible(false);
