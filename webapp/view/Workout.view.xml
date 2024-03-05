@@ -30,7 +30,7 @@
                 <Button
                     width="100%"
                     id="startButton"
-                    icon="sap-icon://play"
+                    icon="sap-icon://media-play"
                     text="START"
                     type="Emphasized"
                     press="startWorkout"
@@ -38,7 +38,7 @@
                 <Button
                     width="100%"
                     id="stopButton"
-                    icon="sap-icon://pause"
+                    icon="sap-icon://media-pause"
                     text="PAUSE"
                     type="Neutral"
                     press="stopWorkout"
@@ -52,7 +52,7 @@
                         width="50%"
                         id="continueButton"
                         text="CONTINUE"
-                        icon="sap-icon://play"
+                        icon="sap-icon://media-play"
                         type="Emphasized"
                         press="continueWorkout"
                         visible="false"

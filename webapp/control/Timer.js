@@ -141,6 +141,7 @@ sap.ui.define([
 						that.getModel("workoutsModel").setProperty( sPath + "/exercises/" + formerIntervallIndex + "/current","Success");
 						that.getModel("workoutsModel").setProperty( sPath + "/exercises/" + intervallIndex + "/current","Warning");
 						formerIntervallIndex = intervallIndex;
+						sap.ui.getCore().byId("__component0---workout--exercisesList").scrollToIndex((intervallIndex+1)/2+1);
 						let e = that.getExercises();
 
 						//this.setExercises(aExercises);
