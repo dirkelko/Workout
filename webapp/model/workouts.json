@@ -304,6 +304,39 @@
         ]
     },
     {
+        "id":"evander1",
+        "name":"Evander",
+        "level": 1,
+        "for": "Ganzkörper",
+        "roundsExercises": "3x7",
+        "exercises":[
+            {"id":0, "ex":0, "round": 1, "name": "Start in", "duration": 10, "vis":false},{"id":1, "ex":1, "round": 1, "name":"Skipping Sprawls",      "duration":45,"vis": true },
+            {"id":0, "ex":0, "round": 1, "name": "Recovery", "duration": 20, "vis":false},{"id":2, "ex":2, "round": 1, "name":"High Plank Side Steps", "duration":40,"vis": true },
+            {"id":0, "ex":0, "round": 1, "name": "Recovery", "duration": 20, "vis":false},{"id":3, "ex":3, "round": 1, "name":"Easy Squats",           "duration":45,"vis": true },
+            {"id":0, "ex":0, "round": 1, "name": "Recovery", "duration": 20, "vis":false},{"id":4, "ex":4, "round": 1, "name":"High Plank Walking",    "duration":40,"vis": true },
+            {"id":0, "ex":0, "round": 1, "name": "Recovery", "duration": 20, "vis":false},{"id":5, "ex":5, "round": 1, "name":"Quick Feet Squats",     "duration":30,"vis": true },
+            {"id":0, "ex":0, "round": 1, "name": "Recovery", "duration": 20, "vis":false},{"id":6, "ex":6, "round": 1, "name":"High Plank Knee Tap",   "duration":40,"vis": true },
+            {"id":0, "ex":0, "round": 1, "name": "Recovery", "duration": 20, "vis":false},{"id":7, "ex":7, "round": 1, "name":"Single Leg Raises",     "duration":45,"vis": true },
+
+            {"id":0, "ex":0, "round": 2, "name": "Recovery", "duration": 45, "vis":false},{"id":9, "ex":1, "round": 2, "name":"Skipping Sprawls",      "duration":45,"vis": true },
+            {"id":0, "ex":0, "round": 2, "name": "Recovery", "duration": 20, "vis":false},{"id":10, "ex":2, "round": 2, "name":"Low Plank Jacks",      "duration":35,"vis": true },
+            {"id":0, "ex":0, "round": 2, "name": "Recovery", "duration": 20, "vis":false},{"id":11, "ex":3, "round": 2, "name":"Easy Squats",          "duration":40,"vis": true },
+            {"id":0, "ex":0, "round": 2, "name": "Recovery", "duration": 20, "vis":false},{"id":12, "ex":4, "round": 2, "name":"Low Plank Walking",    "duration":35,"vis": true },
+            {"id":0, "ex":0, "round": 2, "name": "Recovery", "duration": 20, "vis":false},{"id":13, "ex":5, "round": 2, "name":"Quick Feet Squats",    "duration":30,"vis": true },
+            {"id":0, "ex":0, "round": 2, "name": "Recovery", "duration": 20, "vis":false},{"id":14, "ex":6, "round": 2, "name":"High Plank Knee Tap",  "duration":40,"vis": true },
+            {"id":0, "ex":0, "round": 2, "name": "Recovery", "duration": 20, "vis":false},{"id":15, "ex":7, "round": 2, "name":"Single Leg Raises",    "duration":45,"vis": true },
+
+            {"id":0, "ex":0, "round": 3, "name": "Recovery", "duration": 45, "vis":false},{"id":17, "ex":1, "round": 3, "name":"Skipping Sprawls",      "duration":45,"vis": true },
+            {"id":0, "ex":0, "round": 3, "name": "Recovery", "duration": 20, "vis":false},{"id":18, "ex":2, "round": 3, "name":"High Plank Side Steps", "duration":40,"vis": true },
+            {"id":0, "ex":0, "round": 3, "name": "Recovery", "duration": 20, "vis":false},{"id":19, "ex":3, "round": 3, "name":"Easy Squats",           "duration":40,"vis": true },
+            {"id":0, "ex":0, "round": 3, "name": "Recovery", "duration": 20, "vis":false},{"id":20, "ex":4, "round": 3, "name":"High Plank Walking",    "duration":40,"vis": true },
+            {"id":0, "ex":0, "round": 3, "name": "Recovery", "duration": 20, "vis":false},{"id":21, "ex":5, "round": 3, "name":"Quick Feet Squats",     "duration":30,"vis": true },
+            {"id":0, "ex":0, "round": 3, "name": "Recovery", "duration": 20, "vis":false},{"id":22, "ex":6, "round": 3, "name":"High Plank Knee Tap",   "duration":40,"vis": true },
+            {"id":0, "ex":0, "round": 3, "name": "Recovery", "duration": 20, "vis":false},{"id":23, "ex":7, "round": 3, "name":"Single Leg Raises",     "duration":45,"vis": true }
+
+        ]
+    },
+    {
         "id":"floyd2",
         "name":"Floyd",
         "level": 2,
@@ -528,6 +561,34 @@
             {"id":0, "ex":0, "round": 3, "name": "Recovery", "duration": 20, "vis":false},{"id":19, "ex":5, "round": 3, "name":"Easy Squats", "duration":45,"vis": true },
             {"id":0, "ex":0, "round": 3, "name": "Recovery", "duration": 20, "vis":false},{"id":20, "ex":6, "round": 3, "name":"Skipping", "duration":45,"vis": true },
             {"id":0, "ex":0, "round": 3, "name": "Recovery", "duration": 20, "vis":false},{"id":21, "ex":7, "round": 3, "name":"T High Plank", "duration":30,"vis": true }
+
+        ]
+    },
+    {
+        "id":"james1",
+        "name":"James",
+        "level": 1,
+        "for": "Unterkörper",
+        "roundsExercises": "3x7",
+        "exercises":[
+            {"id":0, "ex":0, "round": 1, "name": "Start in", "duration": 10, "vis":false},{"id":1, "ex":1, "round": 1, "name":"Quick Feet Squat Sprawls", "duration":60,"vis": true },
+            {"id":0, "ex":0, "round": 1, "name": "Recovery", "duration": 20, "vis":false},{"id":2, "ex":2, "round": 1, "name":"Easy Squats", "duration":20,"vis": true },
+            {"id":0, "ex":0, "round": 1, "name": "Recovery", "duration": 20, "vis":false},{"id":3, "ex":3, "round": 1, "name":"Front Kick Squats", "duration":60,"vis": true },
+            {"id":0, "ex":0, "round": 1, "name": "Recovery", "duration": 20, "vis":false},{"id":4, "ex":4, "round": 1, "name":"High Plank Walking", "duration":45,"vis": true },
+            {"id":0, "ex":0, "round": 1, "name": "Recovery", "duration": 20, "vis":false},{"id":5, "ex":5, "round": 1, "name":"Frog Jumps", "duration":60,"vis": true },
+            {"id":0, "ex":0, "round": 1, "name": "Recovery", "duration": 20, "vis":false},{"id":6, "ex":6, "round": 1, "name":"Easy Squats", "duration":45,"vis": true },
+
+            {"id":0, "ex":0, "round": 2, "name": "Recovery", "duration": 60, "vis":false},{"id":8, "ex":1, "round": 2, "name":"Quick Feet Squat Sprawls", "duration":45,"vis": true },
+            {"id":0, "ex":0, "round": 2, "name": "Recovery", "duration": 20, "vis":false},{"id":9, "ex":2, "round": 2, "name":"Easy Squats", "duration":20,"vis": true },
+            {"id":0, "ex":0, "round": 2, "name": "Recovery", "duration": 20, "vis":false},{"id":10, "ex":3, "round": 2, "name":"Front Kick Squats", "duration":45,"vis": true },
+            {"id":0, "ex":0, "round": 2, "name": "Recovery", "duration": 20, "vis":false},{"id":11, "ex":4, "round": 2, "name":"Frog Jumps", "duration":45,"vis": true },
+            {"id":0, "ex":0, "round": 2, "name": "Recovery", "duration": 20, "vis":false},{"id":12, "ex":5, "round": 2, "name":"Easy Squats", "duration":35,"vis": true },
+
+            {"id":0, "ex":0, "round": 3, "name": "Recovery", "duration": 60, "vis":false},{"id":15, "ex":1, "round": 3, "name":"Quick Feet Squat Sprawls", "duration":45,"vis": true },
+            {"id":0, "ex":0, "round": 3, "name": "Recovery", "duration": 20, "vis":false},{"id":16, "ex":2, "round": 3, "name":"Easy Squats", "duration":20,"vis": true },
+            {"id":0, "ex":0, "round": 3, "name": "Recovery", "duration": 20, "vis":false},{"id":17, "ex":3, "round": 3, "name":"Front Kick Squats", "duration":35,"vis": true },
+            {"id":0, "ex":0, "round": 3, "name": "Recovery", "duration": 20, "vis":false},{"id":18, "ex":4, "round": 3, "name":"Frog Jumps", "duration":45,"vis": true },
+            {"id":0, "ex":0, "round": 3, "name": "Recovery", "duration": 20, "vis":false},{"id":19, "ex":5, "round": 3, "name":"Easy Squats", "duration":30,"vis": true }
 
         ]
     },

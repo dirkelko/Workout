@@ -40,7 +40,7 @@
                                 <HBox justifyContent="SpaceBetween">
                                     <VBox justifyContent="SpaceBetween" class="sapUiSmallMarginTop sapUiSmallMarginBegin">
                                         <Title text="{workoutsModel>name} {workoutsModel>level}"/>
-                                        <Label text="{workoutsModel>roundsExercises}"/>
+                                        <Label text="{workoutsModel>roundsExercises} {workoutsModel>for}"/>
                                     <ObjectNumber number="{workoutsModel>duration}" unit="min"/>
                                     </VBox>
                                     <core:Icon
