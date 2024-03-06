@@ -43,8 +43,6 @@ sap.ui.define([
 		
 		init : function () {  
 			noSleep = new NoSleep();
-
-			//this.tires = {};
 		},
 
 		reset : function(){
