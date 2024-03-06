@@ -23,6 +23,7 @@ sap.ui.define([
 	const r = 500;
 	let remTime = 0;
 	let intervallIndex=0;
+	let formerIntervallIndex=0;
 	let noSleep;
     const bellSingle = new Audio('./sounds/BellSingle.m4a');
     const bellTriple = new Audio('./sounds/BellTriple.m4a');
@@ -86,7 +87,8 @@ sap.ui.define([
 			const dt = 50; //timer intervall for clock path
 			const timerDom = this.getDomRef(); 
 			const sPath = this.getBinding('exercises').getContext().getPath();
-			let formerIntervallIndex = 0;
+			formerIntervallIndex = intervallIndex;
+			this.getModel("workoutsModel").setProperty( sPath + "/exercises/" + intervallIndex + "/current","Warning");
 
 			noSleep.enable();
 
@@ -182,6 +184,9 @@ sap.ui.define([
 			this.isRunnung = false;
 		},
 		nextExercise : function(){
+			if (intervallIndex >= this.getExercises().length-1){
+				return;
+			};
 			intervallIndex = (intervallIndex % 2)? intervallIndex + 2 : intervallIndex + 1;
 			const timerDom = this.getDomRef(); 
 			let exercises = this.getExercises();

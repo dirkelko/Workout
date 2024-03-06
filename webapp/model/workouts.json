@@ -32,8 +32,8 @@
         {"id":0, "ex":0, "round": 1, "name": "Recovery", "duration": 5, "vis":false},{"id":4, "ex":4,  "round": 1, "name":"Mountain Climber Twist", "duration":30,"vis": true},
         {"id":0, "ex":0, "round": 1, "name": "Recovery", "duration": 5, "vis":false},{"id":5, "ex":5,  "round": 1, "name":"Walking Kicks", "duration":30,"vis": true},
         {"id":0, "ex":0, "round": 1, "name": "Recovery", "duration": 5, "vis":false},{"id":6, "ex":6,  "round": 1, "name":"Arm Circles Forwards", "duration":15,"vis": true},
-        {"id":0, "ex":0, "round": 1, "name": "Recovery", "duration": 5, "vis":false},{"id":7, "ex":8,  "round": 1, "name":"Arm Circles Backwards", "duration":15,"vis": true},
-        {"id":0, "ex":0, "round": 1, "name": "Recovery", "duration": 5, "vis":false},{"id":8, "ex":9,  "round": 1, "name":"Wrist Rotation", "duration":10,"vis": true}
+        {"id":0, "ex":0, "round": 1, "name": "Recovery", "duration": 5, "vis":false},{"id":7, "ex":7,  "round": 1, "name":"Arm Circles Backwards", "duration":15,"vis": true},
+        {"id":0, "ex":0, "round": 1, "name": "Recovery", "duration": 5, "vis":false},{"id":8, "ex":8,  "round": 1, "name":"Wrist Rotation", "duration":10,"vis": true}
     ]},{
     "id":"anthony2",
     "name":"Anthony",
