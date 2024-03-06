@@ -80,6 +80,22 @@
                             />
                         </layoutData-->
                     </Button>
+                    <Button
+                        width="50%"
+                        id="nextButton"
+                        text="NEXT"
+                        type="Neutral"
+                        icon="sap-icon://media-forward"
+                        press="nextExercise"
+                        visible="false"
+                    >
+                        <!--layoutData>
+                            <FlexItemData
+                                growFactor="1"
+                                baseSize="0"
+                            />
+                        </layoutData-->
+                    </Button>
                 </HBox>
                 <ScrollContainer
                     height="100%"

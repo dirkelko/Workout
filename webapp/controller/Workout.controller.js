@@ -27,29 +27,27 @@ sap.ui.define([
             this.byId("resetButton").setVisible(false);
             this.byId("continueButton").setVisible(false);
             let screenLock = await navigator.wakeLock.request('screen');
-
-            //let sPath = this.getView().getBindingContext("workoutsModel").sPath;
-            //let workout = this.getView().getModel("workoutsModel").getProperty(sPath);
         },
         continueWorkout: function(oContext) {
             this.byId("Timer").startClock(false);
             this.byId("startButton").setVisible(false);
             this.byId("stopButton").setVisible(true);
             this.byId("resetButton").setVisible(false);
+            this.byId("nextButton").setVisible(false);
             this.byId("continueButton").setVisible(false);
-            //let sPath = this.getView().getBindingContext("workoutsModel").sPath;
-            //let workout = this.getView().getModel("workoutsModel").getProperty(sPath);
         },
         resetWorkout: function(oContext) {
             this.byId("Timer").resetClock();
-            //let sPath = this.getView().getBindingContext("workoutsModel").sPath;
-            //let workout = this.getView().getModel("workoutsModel").getProperty(sPath);
+        },
+        nextExercise: function(oContext) {
+            this.byId("Timer").nextExercise();
         },
 
         stopWorkout: function(oContext) {
             this.byId("Timer").stopClock();
             this.byId("continueButton").setVisible(true);
             this.byId("resetButton").setVisible(true);
+            this.byId("nextButton").setVisible(true);
             this.byId("stopButton").setVisible(false);
             //let sPath = this.getView().getBindingContext("workoutsModel").sPath;
             //let workout = this.getView().getModel("workoutsModel").getProperty(sPath);
@@ -66,6 +64,7 @@ sap.ui.define([
             this.byId("startButton").setVisible(true);
             this.byId("stopButton").setVisible(false);
             this.byId("resetButton").setVisible(false);
+            this.byId("nextButton").setVisible(false);
             this.byId("continueButton").setVisible(false);
 
             this.getOwnerComponent().getRouter().navTo("main");

@@ -181,6 +181,21 @@ sap.ui.define([
 			timerDom.querySelector("#timer").innerHTML = timerString(remTime);
 			this.isRunnung = false;
 		},
+		nextExercise : function(){
+			intervallIndex = (intervallIndex % 2)? intervallIndex + 2 : intervallIndex + 1;
+			const timerDom = this.getDomRef(); 
+			let exercises = this.getExercises();
+			timerDom.querySelector("#clockPath").setAttribute("stroke","transparent");
+			timerDom.querySelector("#clockCircle").setAttribute("stroke",(intervallIndex % 2)? "orange" : "green");
+			timerDom.querySelector("#exerciseName").innerHTML = exercises[intervallIndex].name;
+			timerDom.querySelector("#exerciseInfo").innerHTML = 
+			`Exercise ${exercises[intervallIndex].ex}/${exercises.filter(ex=>{ return ex.round == exercises[intervallIndex].round && ex.vis}).length}`;
+			timerDom.querySelector("#roundInfo").innerHTML = 
+			`Round ${exercises[intervallIndex].round}/${exercises[exercises.length-1].round}`;
+			remTime = exercises[intervallIndex].duration * 1000;
+			timerDom.querySelector("#timer").innerHTML = timerString(remTime);
+			this.isRunnung = false;
+		},
 			
 		renderer : TimerRenderer
 	});
