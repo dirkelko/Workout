@@ -146,7 +146,7 @@ sap.ui.define([
 
 						//this.setExercises(aExercises);
 						timerDom.querySelector("#exerciseInfo").innerHTML = 
-						`Exercise ${aExercises[intervallIndex].id}/${aExercises.filter(ex=>{ return ex.round == aExercises[intervallIndex].round && ex.vis}).length}`;
+						`Exercise ${aExercises[intervallIndex].ex}/${aExercises.filter(ex=>{ return ex.round == aExercises[intervallIndex].round && ex.vis}).length}`;
 						timerDom.querySelector("#roundInfo").innerHTML = 
 						`Round ${aExercises[intervallIndex].round}/${aExercises[aExercises.length-1].round}`;
 					}else{
