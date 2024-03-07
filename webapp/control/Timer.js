@@ -22,9 +22,10 @@ sap.ui.define([
 	const mY = 100;
 	const r = 500;
 	let remTime = 0;
-	let intervallIndex=0;
+	let intervalIndex=0;
 	let bPause = true;
 	let noSleep;
+	let interval;
     const bellSingle = new Audio('./sounds/BellSingle.m4a');
     const bellTriple = new Audio('./sounds/BellTriple.m4a');
 
@@ -48,7 +49,7 @@ sap.ui.define([
 
 		reset : function(){
 			remTime = 0;
-			intervallIndex=0;
+			intervalIndex=0;
 			this.invalidate();		
 		},
 
@@ -89,30 +90,30 @@ sap.ui.define([
 			const timerDom = this.getDomRef(); 
 			const sPath = this.getBinding('exercises').getContext().getPath();
 			// mark current exercise as active (Warning = yellow) in table
-			//this.getModel("workoutsModel").setProperty( sPath + "/exercises/" + intervallIndex + "/current","Warning");
+			//this.getModel("workoutsModel").setProperty( sPath + "/exercises/" + intervalIndex + "/current","Warning");
 
 			noSleep.enable();
 
 			let aExercises = this.getExercises();
-			let milliSeconds = (bPause)? aExercises[intervallIndex].pause * 1000 : aExercises[intervallIndex].duration * 1000;
+			let milliSeconds = (bPause)? aExercises[intervalIndex].pause * 1000 : aExercises[intervalIndex].duration * 1000;
 			remTime = milliSeconds;
-			//console.log(`remTime: ${remTime} intervallIndex ${intervallIndex}`)
+			//console.log(`remTime: ${remTime} intervalIndex ${intervalIndex}`)
 			if (start) {
 				bPause = true;
-				intervallIndex=0;
-				let milliSeconds = (bPause)? aExercises[intervallIndex].pause * 1000 : aExercises[intervallIndex].duration * 1000;
+				intervalIndex=0;
+				let milliSeconds = (bPause)? aExercises[intervalIndex].pause * 1000 : aExercises[intervalIndex].duration * 1000;
 				remTime = milliSeconds;
 			}
 			let endTime = Date.now() + remTime;
 
 			let that = this;
 	
-			this.interval = setInterval(function(){
+			interval = setInterval(function(){
 				remTime = endTime - Date.now();
-				//console.log(`remTime: ${remTime} intervallIndex ${intervallIndex}`)
+				//console.log(`remTime: ${remTime} intervalIndex ${intervalIndex}`)
 				timerDom.querySelector("#timer").innerHTML = timerString(remTime);
-				let pauseText = (aExercises[intervallIndex].id == 1)? "Start In" : "Recovery";
-				timerDom.querySelector("#exerciseName").innerHTML = (bPause)? pauseText : aExercises[intervallIndex].name;
+				let pauseText = (aExercises[intervalIndex].id == 1)? "Start In" : "Recovery";
+				timerDom.querySelector("#exerciseName").innerHTML = (bPause)? pauseText : aExercises[intervalIndex].name;
 	
 				timerDom.querySelector("#clockCircle").setAttribute("stroke","transparent");
 				timerDom.querySelector("#clockPath").setAttribute("stroke",
@@ -125,43 +126,43 @@ sap.ui.define([
 				timerDom.querySelector("#clockPath").setAttribute("d",sArc);
 				if (remTime < 5000 && bPause ){
 					timerDom.querySelector("#nextName").innerHTML = "Next:";
-					timerDom.querySelector("#exerciseName").innerHTML = aExercises[intervallIndex].name;
+					timerDom.querySelector("#exerciseName").innerHTML = aExercises[intervalIndex].name;
 				}
-				if (remTime <= 0 && intervallIndex < aExercises.length-1){
+				if (remTime <= 0 && intervalIndex >= aExercises.length -1 && !bPause){
+					bellTriple.play();
+					timerDom.querySelector("#clockPath").setAttribute("stroke","transparent");
+					this.isRunnung = false;
+					clearInterval(interval);
+					timerDom.querySelector("#timer").innerHTML = timerString(0);
+				} else if (remTime <= 0 && intervalIndex < aExercises.length){
 					if (bPause){
 						bellSingle.play();
-						that.getModel("workoutsModel").setProperty( sPath + "/exercises/" + intervallIndex + "/current","Warning");
+						that.getModel("workoutsModel").setProperty( sPath + "/exercises/" + intervalIndex + "/current","Warning");
 						bPause = false;
-						milliSeconds = Number(aExercises[intervallIndex].duration) * 1000;		
-						console.log("bPause to false " + milliSeconds);
+						milliSeconds = Number(aExercises[intervalIndex].duration) * 1000;		
+						//console.log("bPause to false " + milliSeconds);
 					}else{
 						bellTriple.play();
 						bPause = true;
-						that.getModel("workoutsModel").setProperty( sPath + "/exercises/" + intervallIndex + "/current","Success");
-						intervallIndex = intervallIndex + 1;
-						milliSeconds = Number(aExercises[intervallIndex].pause) * 1000;
-						console.log("bPause to true " + milliSeconds);
+						that.getModel("workoutsModel").setProperty( sPath + "/exercises/" + intervalIndex + "/current","Success");
+						intervalIndex = intervalIndex + 1;
+						milliSeconds = Number(aExercises[intervalIndex].pause) * 1000;
+						//console.log("bPause to true " + milliSeconds + " index " +  intervalIndex);
 					}
 					timerDom.querySelector("#clockPath").setAttribute("stroke","transparent");
 					this.isRunnung = true;
 					timerDom.querySelector("#timer").innerHTML = timerString(0);
 					timerDom.querySelector("#nextName").innerHTML = "";
-					sap.ui.getCore().byId("__component0---workout--exercisesList").scrollToIndex(intervallIndex+1);
+					sap.ui.getCore().byId("__component0---workout--exercisesList").scrollToIndex(intervalIndex+1);
 					let e = that.getExercises();
 					timerDom.querySelector("#exerciseInfo").innerHTML = 
-					`Exercise ${aExercises[intervallIndex].ex}/${aExercises.filter(ex=>{ return ex.round == aExercises[intervallIndex].round}).length}`;
+					`Exercise ${aExercises[intervalIndex].ex}/${aExercises.filter(ex=>{ return ex.round == aExercises[intervalIndex].round}).length}`;
 					timerDom.querySelector("#roundInfo").innerHTML = 
-					`Round ${aExercises[intervallIndex].round}/${aExercises[aExercises.length-1].round}`;
+					`Round ${aExercises[intervalIndex].round}/${aExercises[aExercises.length-1].round}`;
 					remTime = milliSeconds;
 					endTime = Date.now() + remTime;
 	
-			   }else if (remTime <= 0 && intervallIndex == aExercises.length-1){
-					bellTriple.play();
-					timerDom.querySelector("#clockPath").setAttribute("stroke","transparent");
-					this.isRunnung = false;
-					clearInterval(this.interval);
-					timerDom.querySelector("#timer").innerHTML = timerString(0);                
-				}
+			   }
 			}, dt);           
 	
 		},
@@ -177,26 +178,26 @@ sap.ui.define([
 			const timerDom = this.getDomRef(); 
 			timerDom.querySelector("#clockCircle").setAttribute("stroke",(!bPause)? "orange" : "green");
 			let exercises = this.getExercises();
-			remTime = (bPause)? exercises[intervallIndex].pause * 1000 : exercises[intervallIndex].duration * 1000;
+			remTime = (bPause)? exercises[intervalIndex].pause * 1000 : exercises[intervalIndex].duration * 1000;
 			timerDom.querySelector("#timer").innerHTML = timerString(remTime);
 			this.isRunnung = false;
 		},
 		nextExercise : function(){
-			if (intervallIndex >= this.getExercises().length-1){
+			if (intervalIndex >= this.getExercises().length-1){
 				return;
 			};
 			bPause = false;
-			intervallIndex = intervallIndex + 1;
+			intervalIndex = intervalIndex + 1;
 			const timerDom = this.getDomRef(); 
 			let exercises = this.getExercises();
 			timerDom.querySelector("#clockPath").setAttribute("stroke","transparent");
 			timerDom.querySelector("#clockCircle").setAttribute("stroke", "orange");
-			timerDom.querySelector("#exerciseName").innerHTML = exercises[intervallIndex].name;
+			timerDom.querySelector("#exerciseName").innerHTML = exercises[intervalIndex].name;
 			timerDom.querySelector("#exerciseInfo").innerHTML = 
-			`Exercise ${exercises[intervallIndex].ex}/${exercises.filter(ex=>{ return ex.round == exercises[intervallIndex].round}).length}`;
+			`Exercise ${exercises[intervalIndex].ex}/${exercises.filter(ex=>{ return ex.round == exercises[intervalIndex].round}).length}`;
 			timerDom.querySelector("#roundInfo").innerHTML = 
-			`Round ${exercises[intervallIndex].round}/${exercises[exercises.length-1].round}`;
-			remTime = exercises[intervallIndex].duration * 1000;
+			`Round ${exercises[intervalIndex].round}/${exercises[exercises.length-1].round}`;
+			remTime = exercises[intervalIndex].duration * 1000;
 			timerDom.querySelector("#timer").innerHTML = timerString(remTime);
 			this.isRunnung = false;
 		},

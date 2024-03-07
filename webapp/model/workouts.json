@@ -1,4 +1,15 @@
-{"workouts":[{
+{"workouts":[
+    {
+    "id":"000test",
+    "name":"TEST",
+    "level": "TEST",
+    "for": "Test",
+    "roundsExercises": "2",
+    "exercises":[
+        {"id":1, "ex":1,  "round": 1, "name":"Jumping Jacks",           "duration":5,"pause":3},
+        {"id":2, "ex":2,  "round": 1, "name":"Front Kick Squats",       "duration":5,"pause":3}
+    ]},
+    {
     "id":"00test",
     "name":"TEST",
     "level": "ALL",
@@ -19,7 +30,8 @@
         {"id":10, "ex":2,  "round": 3, "name":"Front Kick Squats",      "duration":5,"pause":3},
         {"id":11, "ex":3,  "round": 3, "name":"Lunges Rotation",        "duration":5,"pause":3},
         {"id":12, "ex":4,  "round": 3, "name":"Mountain Climber Twist", "duration":5,"pause":3}
-    ]},{
+    ]},
+    {
     "id":"0warmup",
     "name":"Warmup",
     "level": "ALL",
@@ -34,7 +46,8 @@
         {"id":6, "ex":6,  "round": 1, "name":"Arm Circles Forwards",    "duration":15,"pause":20},
         {"id":7, "ex":7,  "round": 1, "name":"Arm Circles Backwards",   "duration":15,"pause":20},
         {"id":8, "ex":8,  "round": 1, "name":"Wrist Rotation",          "duration":10,"pause":20}
-    ]},{
+    ]},
+    {
     "id":"anthony2",
     "name":"Anthony",
     "level": 2,
