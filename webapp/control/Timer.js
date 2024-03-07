@@ -21,6 +21,7 @@ sap.ui.define([
 	const mX = 600;
 	const mY = 100;
 	const r = 500;
+	let milliSeconds = 0;
 	let remTime = 0;
 	let intervalIndex=0;
 	let bPause = true;
@@ -95,13 +96,13 @@ sap.ui.define([
 			noSleep.enable();
 
 			let aExercises = this.getExercises();
-			let milliSeconds = (bPause)? aExercises[intervalIndex].pause * 1000 : aExercises[intervalIndex].duration * 1000;
-			remTime = milliSeconds;
+			//let milliSeconds = (bPause)? aExercises[intervalIndex].pause * 1000 : aExercises[intervalIndex].duration * 1000;
+			//remTime = milliSeconds;
 			//console.log(`remTime: ${remTime} intervalIndex ${intervalIndex}`)
 			if (start) {
 				bPause = true;
 				intervalIndex=0;
-				let milliSeconds = (bPause)? aExercises[intervalIndex].pause * 1000 : aExercises[intervalIndex].duration * 1000;
+				milliSeconds = (bPause)? aExercises[intervalIndex].pause * 1000 : aExercises[intervalIndex].duration * 1000;
 				remTime = milliSeconds;
 			}
 			let endTime = Date.now() + remTime;
