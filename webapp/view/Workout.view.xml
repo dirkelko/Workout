@@ -131,7 +131,8 @@
                             </Column>
                         </columns>
                         <items>
-                            <ColumnListItem visible="{workoutsModel>vis}" press="handleLinkPress" type="Active" highlight="{workoutsModel>current}">
+                            <!--ColumnListItem visible="{workoutsModel>vis}" press="handleLinkPress" type="Active" highlight="{workoutsModel>current}"-->
+                            <ColumnListItem  press="handleLinkPress" type="Active" highlight="{workoutsModel>current}">
                                 <cells>
                                     <!--core:Icon 
                                         src="sap-icon://video" press="handleLinkPress"/-->

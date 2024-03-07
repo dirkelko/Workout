@@ -23,7 +23,7 @@ sap.ui.define([
 	const r = 500;
 	let remTime = 0;
 	let intervallIndex=0;
-	let formerIntervallIndex=0;
+	let bPause = true;
 	let noSleep;
     const bellSingle = new Audio('./sounds/BellSingle.m4a');
     const bellTriple = new Audio('./sounds/BellTriple.m4a');
@@ -76,29 +76,31 @@ sap.ui.define([
 			let aExercises = this.getExercises();
 			
 			if (aExercises.length > 0){
-				this.getDomRef().querySelector("#timer").innerHTML = timerString(aExercises.reduce((a,e)=>a+parseInt(e.duration),0)*1000);
-				this.getDomRef().querySelector("#exerciseInfo").innerHTML = `Exercises ${aExercises.filter(ex=>{ return  ex.vis}).length}`;
+				this.getDomRef().querySelector("#timer").innerHTML = timerString(aExercises.reduce((a,e)=>a+parseInt(e.duration)+parseInt(e.pause),0)*1000);
+				this.getDomRef().querySelector("#exerciseInfo").innerHTML = `Exercises ${aExercises.length}`;
 				this.getDomRef().querySelector("#roundInfo").innerHTML = `Rounds ${aExercises[aExercises.length-1].round}`;
 			}
 		},
 
+	
 		startClock : function (start){
 
 			const dt = 50; //timer intervall for clock path
 			const timerDom = this.getDomRef(); 
 			const sPath = this.getBinding('exercises').getContext().getPath();
-			formerIntervallIndex = intervallIndex;
-			this.getModel("workoutsModel").setProperty( sPath + "/exercises/" + intervallIndex + "/current","Warning");
+			// mark current exercise as active (Warning = yellow) in table
+			//this.getModel("workoutsModel").setProperty( sPath + "/exercises/" + intervallIndex + "/current","Warning");
 
 			noSleep.enable();
 
 			let aExercises = this.getExercises();
-			let seconds = aExercises[intervallIndex].duration;
-			let milliSeconds = aExercises[intervallIndex].duration * 1000;
+			let milliSeconds = (bPause)? aExercises[intervallIndex].pause * 1000 : aExercises[intervallIndex].duration * 1000;
+			remTime = milliSeconds;
 			//console.log(`remTime: ${remTime} intervallIndex ${intervallIndex}`)
 			if (start) {
+				bPause = true;
 				intervallIndex=0;
-				milliSeconds = aExercises[intervallIndex].duration * 1000;
+				let milliSeconds = (bPause)? aExercises[intervallIndex].pause * 1000 : aExercises[intervallIndex].duration * 1000;
 				remTime = milliSeconds;
 			}
 			let endTime = Date.now() + remTime;
@@ -109,56 +111,52 @@ sap.ui.define([
 				remTime = endTime - Date.now();
 				//console.log(`remTime: ${remTime} intervallIndex ${intervallIndex}`)
 				timerDom.querySelector("#timer").innerHTML = timerString(remTime);
-				timerDom.querySelector("#exerciseName").innerHTML = aExercises[intervallIndex].name;
+				let pauseText = (aExercises[intervallIndex].id == 1)? "Start In" : "Recovery";
+				timerDom.querySelector("#exerciseName").innerHTML = (bPause)? pauseText : aExercises[intervallIndex].name;
 	
 				timerDom.querySelector("#clockCircle").setAttribute("stroke","transparent");
 				timerDom.querySelector("#clockPath").setAttribute("stroke",
-					(intervallIndex % 2)? "orange" : "green");
+					(!bPause)? "orange" : "green");
 				let alpha = (milliSeconds - remTime)/milliSeconds*2*Math.PI;
 				let dx = r * Math.sin(alpha);
 				let dy = r * Math.cos(alpha);
 				let laf = (remTime > milliSeconds/2)? 1 : 0;
 				let sArc = `M ${mX - dx} ${mY + r - dy} A ${r} ${r} 0 ${laf} 0 ${mX} ${mY}`
 				timerDom.querySelector("#clockPath").setAttribute("d",sArc);
-				if (remTime < 5000 && aExercises[intervallIndex].id == 0 ){
+				if (remTime < 5000 && bPause ){
 					timerDom.querySelector("#nextName").innerHTML = "Next:";
-					timerDom.querySelector("#exerciseName").innerHTML = aExercises[intervallIndex+1].name;
+					timerDom.querySelector("#exerciseName").innerHTML = aExercises[intervallIndex].name;
 				}
 				if (remTime <= 0 && intervallIndex < aExercises.length-1){
-					if (intervallIndex % 2){
-						bellTriple.play();
-					}else{
+					if (bPause){
 						bellSingle.play();
+						that.getModel("workoutsModel").setProperty( sPath + "/exercises/" + intervallIndex + "/current","Warning");
+						bPause = false;
+						milliSeconds = Number(aExercises[intervallIndex].duration) * 1000;		
+						console.log("bPause to false " + milliSeconds);
+					}else{
+						bellTriple.play();
+						bPause = true;
+						that.getModel("workoutsModel").setProperty( sPath + "/exercises/" + intervallIndex + "/current","Success");
+						intervallIndex = intervallIndex + 1;
+						milliSeconds = Number(aExercises[intervallIndex].pause) * 1000;
+						console.log("bPause to true " + milliSeconds);
 					}
 					timerDom.querySelector("#clockPath").setAttribute("stroke","transparent");
 					this.isRunnung = true;
 					timerDom.querySelector("#timer").innerHTML = timerString(0);
-
 					timerDom.querySelector("#nextName").innerHTML = "";
-					intervallIndex = intervallIndex + 1;
-					if (aExercises[intervallIndex].vis){
-						//aExercises[intervallIndex].current = "Warning";
-						that.getModel("workoutsModel").setProperty( sPath + "/exercises/" + formerIntervallIndex + "/current","Success");
-						that.getModel("workoutsModel").setProperty( sPath + "/exercises/" + intervallIndex + "/current","Warning");
-						formerIntervallIndex = intervallIndex;
-						sap.ui.getCore().byId("__component0---workout--exercisesList").scrollToIndex((intervallIndex+1)/2+1);
-						let e = that.getExercises();
-
-						//this.setExercises(aExercises);
-						timerDom.querySelector("#exerciseInfo").innerHTML = 
-						`Exercise ${aExercises[intervallIndex].ex}/${aExercises.filter(ex=>{ return ex.round == aExercises[intervallIndex].round && ex.vis}).length}`;
-						timerDom.querySelector("#roundInfo").innerHTML = 
-						`Round ${aExercises[intervallIndex].round}/${aExercises[aExercises.length-1].round}`;
-					}else{
-						that.getModel("workoutsModel").setProperty( sPath + "/exercises/" + formerIntervallIndex + "/current","Success");
-					}
-					seconds = Number(aExercises[intervallIndex].duration);
-					milliSeconds = (seconds)? seconds * 1000 : 0;
+					sap.ui.getCore().byId("__component0---workout--exercisesList").scrollToIndex(intervallIndex+1);
+					let e = that.getExercises();
+					timerDom.querySelector("#exerciseInfo").innerHTML = 
+					`Exercise ${aExercises[intervallIndex].ex}/${aExercises.filter(ex=>{ return ex.round == aExercises[intervallIndex].round}).length}`;
+					timerDom.querySelector("#roundInfo").innerHTML = 
+					`Round ${aExercises[intervallIndex].round}/${aExercises[aExercises.length-1].round}`;
 					remTime = milliSeconds;
 					endTime = Date.now() + remTime;
 	
 			   }else if (remTime <= 0 && intervallIndex == aExercises.length-1){
-					//bellTriple.play();
+					bellTriple.play();
 					timerDom.querySelector("#clockPath").setAttribute("stroke","transparent");
 					this.isRunnung = false;
 					clearInterval(this.interval);
@@ -177,9 +175,9 @@ sap.ui.define([
 
 		resetClock : function(){
 			const timerDom = this.getDomRef(); 
-			timerDom.querySelector("#clockCircle").setAttribute("stroke",(intervallIndex % 2)? "orange" : "green");
+			timerDom.querySelector("#clockCircle").setAttribute("stroke",(!bPause)? "orange" : "green");
 			let exercises = this.getExercises();
-			remTime = exercises[intervallIndex].duration * 1000;
+			remTime = (bPause)? exercises[intervallIndex].pause * 1000 : exercises[intervallIndex].duration * 1000;
 			timerDom.querySelector("#timer").innerHTML = timerString(remTime);
 			this.isRunnung = false;
 		},
@@ -187,14 +185,15 @@ sap.ui.define([
 			if (intervallIndex >= this.getExercises().length-1){
 				return;
 			};
-			intervallIndex = (intervallIndex % 2)? intervallIndex + 2 : intervallIndex + 1;
+			bPause = false;
+			intervallIndex = intervallIndex + 1;
 			const timerDom = this.getDomRef(); 
 			let exercises = this.getExercises();
 			timerDom.querySelector("#clockPath").setAttribute("stroke","transparent");
-			timerDom.querySelector("#clockCircle").setAttribute("stroke",(intervallIndex % 2)? "orange" : "green");
+			timerDom.querySelector("#clockCircle").setAttribute("stroke", "orange");
 			timerDom.querySelector("#exerciseName").innerHTML = exercises[intervallIndex].name;
 			timerDom.querySelector("#exerciseInfo").innerHTML = 
-			`Exercise ${exercises[intervallIndex].ex}/${exercises.filter(ex=>{ return ex.round == exercises[intervallIndex].round && ex.vis}).length}`;
+			`Exercise ${exercises[intervallIndex].ex}/${exercises.filter(ex=>{ return ex.round == exercises[intervallIndex].round}).length}`;
 			timerDom.querySelector("#roundInfo").innerHTML = 
 			`Round ${exercises[intervallIndex].round}/${exercises[exercises.length-1].round}`;
 			remTime = exercises[intervallIndex].duration * 1000;

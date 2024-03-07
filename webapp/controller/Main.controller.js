@@ -9,7 +9,7 @@ sap.ui.define([
 			//calculate overall duration of each workout;
 			let oModel = this.getOwnerComponent().getModel("workoutsModel");
 			oModel.oData.workouts.forEach( workout =>{
-				workout.duration = Math.round(workout.exercises.reduce((a,e)=>a+parseInt(e.duration),0)/60);
+				workout.duration = Math.round(workout.exercises.reduce((a,e)=>a+parseInt(e.duration)+parseInt(e.pause),0)/60);
 			})
 		},
 
