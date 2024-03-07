@@ -134,6 +134,7 @@ sap.ui.define([
 					this.isRunnung = false;
 					clearInterval(interval);
 					timerDom.querySelector("#timer").innerHTML = timerString(0);
+					that.getModel("workoutsModel").setProperty( sPath + "/exercises/" + intervalIndex + "/current","Success");
 				} else if (remTime <= 0 && intervalIndex < aExercises.length){
 					if (bPause){
 						bellSingle.play();
@@ -169,7 +170,7 @@ sap.ui.define([
 
 		stopClock : function(){
 			//const timerDom = this.getDomRef(); 
-			clearInterval(this.interval);
+			clearInterval(interval);
 			this.isRunnung = false;
 			noSleep.disable();
 		},
