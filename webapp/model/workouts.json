@@ -7,13 +7,13 @@
     "roundsExercises": "1x8",
     "exercises":[
         {"id":1, "ex":1,  "round": 1, "name":"Jumping Jacks",           "duration":45,"pause":10},
-        {"id":2, "ex":2,  "round": 1, "name":"Front Kick Squats",       "duration":30,"pause":20},
-        {"id":3, "ex":3,  "round": 1, "name":"Lunges Rotation",         "duration":30,"pause":20},
-        {"id":4, "ex":4,  "round": 1, "name":"Mountain Climber Twist",  "duration":30,"pause":20},
-        {"id":5, "ex":5,  "round": 1, "name":"Walking Kicks",           "duration":30,"pause":20},
-        {"id":6, "ex":6,  "round": 1, "name":"Arm Circles Forwards",    "duration":15,"pause":20},
-        {"id":7, "ex":7,  "round": 1, "name":"Arm Circles Backwards",   "duration":15,"pause":20},
-        {"id":8, "ex":8,  "round": 1, "name":"Wrist Rotation",          "duration":10,"pause":20}
+        {"id":2, "ex":2,  "round": 1, "name":"Front Kick Squats",       "duration":30,"pause":5},
+        {"id":3, "ex":3,  "round": 1, "name":"Lunges Rotation",         "duration":30,"pause":5},
+        {"id":4, "ex":4,  "round": 1, "name":"Mountain Climber Twist",  "duration":30,"pause":5},
+        {"id":5, "ex":5,  "round": 1, "name":"Walking Kicks",           "duration":30,"pause":5},
+        {"id":6, "ex":6,  "round": 1, "name":"Arm Circles Forwards",    "duration":15,"pause":5},
+        {"id":7, "ex":7,  "round": 1, "name":"Arm Circles Backwards",   "duration":15,"pause":5},
+        {"id":8, "ex":8,  "round": 1, "name":"Wrist Rotation",          "duration":10,"pause":5}
     ]},
     {
     "id":"anthony2",
