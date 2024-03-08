@@ -1,37 +1,5 @@
 {"workouts":[
     {
-    "id":"000test",
-    "name":"TEST",
-    "level": "TEST",
-    "for": "Test",
-    "roundsExercises": "2",
-    "exercises":[
-        {"id":1, "ex":1,  "round": 1, "name":"Jumping Jacks",           "duration":5,"pause":3},
-        {"id":2, "ex":2,  "round": 1, "name":"Front Kick Squats",       "duration":5,"pause":3}
-    ]},
-    {
-    "id":"00test",
-    "name":"TEST",
-    "level": "ALL",
-    "for": "Ganzkörper",
-    "roundsExercises": "3x4",
-    "exercises":[
-        {"id":1, "ex":1,  "round": 1, "name":"Jumping Jacks",           "duration":5,"pause":3},
-        {"id":2, "ex":2,  "round": 1, "name":"Front Kick Squats",       "duration":5,"pause":3},
-        {"id":3, "ex":3,  "round": 1, "name":"Lunges Rotation",         "duration":5,"pause":3},
-        {"id":4, "ex":4,  "round": 1, "name":"Mountain Climber Twist",  "duration":5,"pause":3},
-
-        {"id":5, "ex":1,  "round": 2, "name":"Jumping Jacks",           "duration":5,"pause":3},
-        {"id":6, "ex":2,  "round": 2, "name":"Front Kick Squats",       "duration":5,"pause":3},
-        {"id":7, "ex":3,  "round": 2, "name":"Lunges Rotation",         "duration":5,"pause":3},
-        {"id":8, "ex":4,  "round": 2, "name":"Mountain Climber Twist",  "duration":5,"pause":3},
-
-        {"id":9, "ex":1,  "round": 3, "name":"Jumping Jacks",           "duration":5,"pause":3},
-        {"id":10, "ex":2,  "round": 3, "name":"Front Kick Squats",      "duration":5,"pause":3},
-        {"id":11, "ex":3,  "round": 3, "name":"Lunges Rotation",        "duration":5,"pause":3},
-        {"id":12, "ex":4,  "round": 3, "name":"Mountain Climber Twist", "duration":5,"pause":3}
-    ]},
-    {
     "id":"0warmup",
     "name":"Warmup",
     "level": "ALL",

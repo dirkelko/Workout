@@ -192,6 +192,8 @@ sap.ui.define([
 			intervalIndex = intervalIndex + 1;
 			const timerDom = this.getDomRef(); 
 			let exercises = this.getExercises();
+			milliSeconds = exercises[intervalIndex].duration * 1000;
+			remTime = milliSeconds;
 			timerDom.querySelector("#clockPath").setAttribute("stroke","transparent");
 			timerDom.querySelector("#clockCircle").setAttribute("stroke", "orange");
 			timerDom.querySelector("#exerciseName").innerHTML = exercises[intervalIndex].name;
