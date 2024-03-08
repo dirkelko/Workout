@@ -188,8 +188,8 @@ sap.ui.define([
 			if (intervalIndex >= this.getExercises().length-1){
 				return;
 			};
+			intervalIndex = (bPause)? intervalIndex : intervalIndex + 1;
 			bPause = false;
-			intervalIndex = intervalIndex + 1;
 			const timerDom = this.getDomRef(); 
 			let exercises = this.getExercises();
 			milliSeconds = exercises[intervalIndex].duration * 1000;
