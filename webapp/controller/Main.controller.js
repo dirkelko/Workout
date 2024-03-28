@@ -22,7 +22,7 @@ sap.ui.define([
 				case 3:
 					return "#4db1ff";
 				case 4:
-					return "darkgreen";
+					return "Critical";
 				default:
 					return "white";
 			}

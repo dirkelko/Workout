@@ -45,7 +45,8 @@
         {"id":16, "ex":1, "round": 6, "name":"Mountain Wide Jumpers",           "duration":30,"pause":60},
         {"id":17, "ex":2, "round": 6, "name":"Sit-Ups",                         "duration":45,"pause":20},
         {"id":18, "ex":3, "round": 6, "name":"Squats",                          "duration":30,"pause":20}
-    ]},{
+    ]},
+    {
     "id":"anthony3",
     "name":"Anthony",
     "level": 3,
