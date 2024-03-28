@@ -21,7 +21,6 @@
                     <IconTabFilter icon="sap-icon://physical-activity" iconColor="Neutral" text="Level 1" key="1"/>
                     <IconTabFilter icon="sap-icon://physical-activity" iconColor="Positive" text="Level 2" key="2"/>
                     <IconTabFilter icon="sap-icon://physical-activity" iconColor="Default" text="Level 3" key="3"/>
-                    <IconTabFilter icon="sap-icon://physical-activity" iconColor="Critical" text="Level 4" key="4"/>
                 </items>
                 <content>
                     <f:GridList
