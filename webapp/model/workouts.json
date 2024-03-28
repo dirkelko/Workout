@@ -369,7 +369,7 @@
             {"id":9, "ex":1, "round": 2, "name":"Inchworm MMA Push-Ups",            "duration":45,"pause":60 },
             {"id":10, "ex":2, "round": 2, "name":"Sit-Ups",                         "duration":45,"pause":25 },
             {"id":11, "ex":3, "round": 2, "name":"Low Plank Side Steps",            "duration":35,"pause":25 },
-            {"id":12, "ex":4, "round": 2, "name":"Windshield Wipers",               "duration":50,"pause":25 },
+            {"id":12, "ex":4, "round": 2, "name":"Windshield Wipers",               "duration":45,"pause":25 },
             {"id":13, "ex":5, "round": 2, "name":"Mountain Climbers",               "duration":45,"pause":25 },
             {"id":14, "ex":6, "round": 2, "name":"Russian Sit-Ups",                 "duration":45,"pause":25 },
             {"id":15, "ex":7, "round": 2, "name":"T Low Planks",                    "duration":45,"pause":25 },
