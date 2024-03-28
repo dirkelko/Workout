@@ -1146,7 +1146,7 @@
             {"id":27, "ex":7, "round": 3, "name":"Tuck Jump Burpees",            "duration":30,"pause":20},
             {"id":28, "ex":8, "round": 3, "name":"Mountain Climbers Pylo Spider","duration":30,"pause":20},
             {"id":29, "ex":9, "round": 3, "name":"Knee Tuck Crunches",           "duration":30,"pause":20},
-            {"id":30, "ex":10, "round": 3, "name":"MMA Push-Ups",                "duration":30,"pause":20},
+            {"id":30, "ex":10, "round": 3, "name":"MMA Push-Ups",                "duration":30,"pause":20}
         ]
     },            
     {
