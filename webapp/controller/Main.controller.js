@@ -3,10 +3,13 @@ sap.ui.define([
 	 "sap/ui/model/Filter"
 	], function (BaseController, Filter) {
 	"use strict";
+	this.selectedLevel = "All";
 
 	return BaseController.extend("com.sap.workout.controller.Main", {
+
 		onInit: function () {
 			//calculate overall duration of each workout;
+			this.selectedLevel = "All";
 			let oModel = this.getOwnerComponent().getModel("workoutsModel");
 			oModel.oData.workouts.forEach( workout =>{
 				workout.duration = Math.round(workout.exercises.reduce((a,e)=>a+parseInt(e.duration)+parseInt(e.pause),0)/60);
@@ -28,12 +31,33 @@ sap.ui.define([
 			}
 		},
 
+		_getSelectedLevel: function (key) {
+
+			if (key == this.selectedLevel){
+				this.selectedLevel = "All";
+				return this.selectedLevel
+			} else {
+				this.selectedLevel = key;
+				return this.selectedLevel
+			}
+
+
+		},
+
 		onLevelSelect: function (oEvent) {
+			var param = oEvent.getParameter("key");
+			var selectedLevel = this._getSelectedLevel(param)
+
+			console.log( "selL: " + selectedLevel + " " + oEvent.getParameter("key") );
 			this._aCustomerFilters = [];
 			this._aStatusFilters = [];
 
+			this.getView().byId("iconTabBar").setSelectedKey(selectedLevel);
+
 			var oBinding = this.getView().byId("workoutsList").getBinding("items");
-			oBinding.filter((oEvent.getParameter("key") == "All")?[]:[new Filter("level", "EQ", oEvent.getParameter("key"), false),new Filter("level", "EQ", "ALL", false)]);
+			var dings = (selectedLevel === "All")?[]:[new Filter("level", "EQ", selectedLevel, false)];
+			oBinding.filter((selectedLevel == "All")? [] : [new Filter("level", "EQ", selectedLevel, false),new Filter("level", "EQ", "ALL", false)]);
+			//oBinding.filter((oEvent.getParameter("key") == "All")?[]:[new Filter("level", "EQ", oEvent.getParameter("key"), false),new Filter("level", "EQ", "ALL", false)]);
 		},
 
 		navToWorkout: function(oEvent) {
