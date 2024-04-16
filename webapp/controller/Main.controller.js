@@ -31,33 +31,17 @@ sap.ui.define([
 			}
 		},
 
-		_getSelectedLevel: function (key) {
-
-			if (key == this.selectedLevel){
-				this.selectedLevel = "All";
-				return this.selectedLevel
-			} else {
-				this.selectedLevel = key;
-				return this.selectedLevel
-			}
-
-
-		},
-
 		onLevelSelect: function (oEvent) {
 			var param = oEvent.getParameter("key");
-			var selectedLevel = this._getSelectedLevel(param)
+			this.selectedLevel = (param == this.selectedLevel)? "All" : param;
 
-			console.log( "selL: " + selectedLevel + " " + oEvent.getParameter("key") );
 			this._aCustomerFilters = [];
 			this._aStatusFilters = [];
 
-			this.getView().byId("iconTabBar").setSelectedKey(selectedLevel);
+			this.getView().byId("iconTabBar").setSelectedKey(this.selectedLevel);
 
 			var oBinding = this.getView().byId("workoutsList").getBinding("items");
-			var dings = (selectedLevel === "All")?[]:[new Filter("level", "EQ", selectedLevel, false)];
-			oBinding.filter((selectedLevel == "All")? [] : [new Filter("level", "EQ", selectedLevel, false),new Filter("level", "EQ", "ALL", false)]);
-			//oBinding.filter((oEvent.getParameter("key") == "All")?[]:[new Filter("level", "EQ", oEvent.getParameter("key"), false),new Filter("level", "EQ", "ALL", false)]);
+			oBinding.filter((this.selectedLevel == "All")? [] : [new Filter("level", "EQ", this.selectedLevel, false),new Filter("level", "EQ", "ALL", false)]);
 		},
 
 		navToWorkout: function(oEvent) {
