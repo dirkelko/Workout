@@ -13,15 +13,18 @@
 		title="SAP BODYWEIGHT WORKOUT"
 		id="mainPage">
 		<content>
-            <IconTabBar id="iconTabBar" select=".onLevelSelect" class="sapUiResponsiveContentPadding" expandable="false">
+            <!--IconTabBar id="iconTabBar" selectedKey="0" select=".onLevelSelect" class="sapUiResponsiveContentPadding" expandable="false"-->
+            <IconTabBar id="iconTabBar" selectedKey="0" select=".onLevelSelect"  class="sapUiResponsiveContentPadding" expandable="false">
                 <items>
-                    <IconTabFilter showAll="true" text="All" key="All" visible="false"/>
-                    <IconTabFilter icon="sap-icon://physical-activity" iconColor="Neutral" text="Level 1" key="1"/>
-                    <IconTabFilter icon="sap-icon://physical-activity" iconColor="Positive" text="Level 2" key="2"/>
-                    <IconTabFilter icon="sap-icon://physical-activity" iconColor="Default" text="Level 3" key="3"/>
-                    <IconTabFilter icon="sap-icon://physical-activity" iconColor="Critical" text="Level 4" key="4"/>
+                    <IconTabFilter id="iconTabFilter0" icon="sap-icon://physical-activity" text="All" key="0" visible="false"/>
+                    <IconTabFilter id="iconTabFilter1" icon="sap-icon://physical-activity" iconColor="Neutral" text="Level 1" key="1"/>
+                    <IconTabFilter id="iconTabFilter2" icon="sap-icon://physical-activity" iconColor="Positive" text="Level 2" key="2"/>
+                    <IconTabFilter id="iconTabFilter3" icon="sap-icon://physical-activity" iconColor="Default" text="Level 3" key="3"/>
+                    <IconTabFilter id="iconTabFilter4" icon="sap-icon://physical-activity" iconColor="Critical" text="Level 4" key="4" visible="false"/>
+                    <IconTabFilter id="iconTabFilter5" icon="sap-icon://heart" iconColor="Critical" text="Favourites" key="F"/>
                 </items>
-                <content>
+            </IconTabBar>
+                <!--content-->
                     <f:GridList
                         id="workoutsList"
                         items="{path: 'workoutsModel>/workouts', sorter: {path:'id', group:false, descending: false}}"
@@ -38,7 +41,7 @@
                                 </layoutData>
                                 <HBox justifyContent="SpaceBetween">
                                     <VBox justifyContent="SpaceBetween" class="sapUiSmallMarginTop sapUiSmallMarginBegin">
-                                        <Title text="{workoutsModel>name} {workoutsModel>level}"/>
+                                        <Title text="{workoutsModel>name} {workoutsModel>level} {workoutsModel>favourite}"/>
                                         <Label text="{workoutsModel>roundsExercises} {workoutsModel>for}"/>
                                     <ObjectNumber number="{workoutsModel>duration}" unit="min"/>
                                     </VBox>
@@ -54,8 +57,8 @@
                             <IllustratedMessage enableVerticalResponsiveness="true" illustrationType="sapIllus-EmptyList"/>
                         </f:noData>
                     </f:GridList>
-                </content>
-            </IconTabBar>
+                <!--/content-->
+            <!--/IconTabBar-->
 		</content>
 	</Page>
 </mvc:View>

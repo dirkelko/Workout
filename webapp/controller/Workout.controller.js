@@ -18,6 +18,8 @@ sap.ui.define([
                 path: "/workouts/" + indexWorkOut,
                 model: "workoutsModel"
             });
+            let path = this.getView().getBindingContext("workoutsModel").sPath;
+            this.byId("favouriteIcon").setSrc( this.getView().getModel("workoutsModel").getProperty(path + "/favourite")? "sap-icon://heart" : "sap-icon://heart-2");
         },
 
         startWorkout: async function(oContext) {
@@ -75,6 +77,19 @@ sap.ui.define([
             let iExerciseIndex = oEvent.getSource().getBindingContext("workoutsModel").getProperty("id");        
             //let exerciseLink = oEvent.getSource().getBindingContext("workoutsModel").getProperty("link");        
 			this.getOwnerComponent().getRouter().navTo("RouteVideo", {id: iWorkoutIndex, exerciseIndex: iExerciseIndex,});
+        },
+
+        setFavourite: function(){
+            let path = this.getView().getBindingContext("workoutsModel").sPath;
+            let isFavourite =  this.getView().getModel("workoutsModel").getProperty(path + "/favourite");
+            this.getView().getModel("workoutsModel").setProperty(path + "/favourite",!isFavourite);
+            this.byId("favouriteIcon").setSrc(isFavourite? "sap-icon://heart-2" : "sap-icon://heart");
+            let favourites = this.getView().getModel("workoutsModel").getProperty("/workouts").filter( wo=>{ 
+                return wo.favourite
+            }).map( wo=>{
+                return wo.id
+            }); 
+            localStorage.setItem("favourites", favourites);
         }
 
     });

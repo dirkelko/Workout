@@ -8,11 +8,31 @@
 >
     <Page
         id="WorkoutPage"
-        title="{workoutsModel>name} Level {workoutsModel>level}"
-        showNavButton="true"
-        navButtonPress=".navToMain"
         enableScrolling="true"
     >
+    <customHeader>
+        <Bar>
+            <contentLeft>
+                <Button
+                    icon="sap-icon://nav-back"
+                    press=".navToMain"
+                />
+            </contentLeft>
+            <contentMiddle>
+                <Title
+                    text="{workoutsModel>name} Level {workoutsModel>level}"
+                />
+            </contentMiddle>
+            <contentRight>
+                <core:Icon
+                    id="favouriteIcon"
+                    src="sap-icon://heart-2"
+                    size="1.5rem"
+                    color="white"
+                    press=".setFavourite"/>
+            </contentRight>
+        </Bar>
+    </customHeader>
         <content>
             <VBox
                 renderType="Bare"

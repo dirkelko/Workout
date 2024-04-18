@@ -1,19 +1,26 @@
 sap.ui.define([
 	"./BaseController",
 	 "sap/ui/model/Filter"
-	], function (BaseController, Filter) {
+	], function (BaseController, Filter, IconPool) {
 	"use strict";
-	this.selectedLevel = "All";
 
 	return BaseController.extend("com.sap.workout.controller.Main", {
 
 		onInit: function () {
 			//calculate overall duration of each workout;
-			this.selectedLevel = "All";
+			this.selectedLevel = "0";
 			let oModel = this.getOwnerComponent().getModel("workoutsModel");
+			let favourites = localStorage.getItem("favourites") || [];
 			oModel.oData.workouts.forEach( workout =>{
 				workout.duration = Math.round(workout.exercises.reduce((a,e)=>a+parseInt(e.duration)+parseInt(e.pause),0)/60);
+				workout.favourite = favourites.indexOf(workout.id) != -1;
 			})
+		},
+
+		onAfterRendering: function(){
+			this.getView().byId("iconTabBar").setSelectedKey("0");
+			//var itf0 = this.getView().byId("iconTabFilter0");
+			//this.getView().byId("iconTabBar").setSelectedItem(itf0);
 		},
 
 		formatIconColor: function(level){
@@ -33,15 +40,15 @@ sap.ui.define([
 
 		onLevelSelect: function (oEvent) {
 			var param = oEvent.getParameter("key");
-			this.selectedLevel = (param == this.selectedLevel)? "All" : param;
 
-			this._aCustomerFilters = [];
-			this._aStatusFilters = [];
-
-			this.getView().byId("iconTabBar").setSelectedKey(this.selectedLevel);
-
-			var oBinding = this.getView().byId("workoutsList").getBinding("items");
-			oBinding.filter((this.selectedLevel == "All")? [] : [new Filter("level", "EQ", this.selectedLevel, false),new Filter("level", "EQ", "ALL", false)]);
+				this.selectedLevel = (param == this.selectedLevel)? "0" : param;
+				this.getView().byId("iconTabBar").setSelectedKey(this.selectedLevel);
+				var oBinding = this.getView().byId("workoutsList").getBinding("items");
+				if (param != "F"){
+					oBinding.filter((this.selectedLevel == "0")? [] : [new Filter("level", "EQ", this.selectedLevel, false),new Filter("level", "EQ", "ALL", false)]);
+				}else{
+					oBinding.filter((this.selectedLevel == "0")? [] : [new Filter("favourite", "EQ", true, false)]);
+				}
 		},
 
 		navToWorkout: function(oEvent) {
