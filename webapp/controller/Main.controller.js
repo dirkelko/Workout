@@ -7,6 +7,9 @@ sap.ui.define([
 	return BaseController.extend("com.sap.workout.controller.Main", {
 
 		onInit: function () {
+			// attach onRouteMatched event to the RouteWorkout route
+			this.getOwnerComponent().getRouter().getRoute("main").attachMatched(this.onRouteMatched, this);
+
 			//calculate overall duration of each workout;
 			this.selectedLevel = "0";
 			let oModel = this.getOwnerComponent().getModel("workoutsModel");
@@ -16,6 +19,15 @@ sap.ui.define([
 				workout.favourite = favourites.indexOf(workout.id) != -1;
 			})
 		},
+
+        onRouteMatched: function (oEvent) {
+			let key = this.getView().byId("iconTabBar").getSelectedKey();
+			if (key == "F"){
+				let oBinding = this.getView().byId("workoutsList").getBinding("items");
+				oBinding.filter([new Filter("favourite", "EQ", true, false)]);
+			}
+        },
+
 
 		onAfterRendering: function(){
 			this.getView().byId("iconTabBar").setSelectedKey("0");

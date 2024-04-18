@@ -89,7 +89,7 @@
 				{
 					"pattern": "",
 					"name": "main",
-					"target": "main"
+					"target": ["main"]
 				},
                 {
                     "name": "RouteWorkout",

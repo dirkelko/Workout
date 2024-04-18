@@ -1,9 +1,9 @@
 sap.ui.define([
-    "sap/ui/core/mvc/Controller"
-], function (Controller) {
+	"./BaseController"
+], function (BaseController) {
     "use strict";
 
-    return Controller.extend("com.sap.controller.Workout", {
+    return BaseController.extend("com.sap.controller.Workout", {
 
         onInit: function () {
             this.getOwnerComponent().getRouter().getRoute("RouteWorkout").attachMatched(this.onRouteMatched, this);
@@ -69,7 +69,7 @@ sap.ui.define([
             this.byId("nextButton").setVisible(false);
             this.byId("continueButton").setVisible(false);
 
-            this.getOwnerComponent().getRouter().navTo("main");
+            this.getOwnerComponent().getRouter().navTo("main", {id: "test"});
         },
 
         handleLinkPress: function(oEvent){
