@@ -8,4 +8,6 @@ sap.ui.define(["sap/ui/model/json/JSONModel", "sap/ui/model/BindingMode", "sap/u
 			return oModel;
 		}
 	};
+
+
 });

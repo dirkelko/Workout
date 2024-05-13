@@ -84,7 +84,6 @@ sap.ui.define([
 			}
 		},
 
-	
 		startClock : function (start){
 
 			const dt = 50; //timer intervall for clock path

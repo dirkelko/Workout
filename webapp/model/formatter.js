@@ -6,4 +6,7 @@ sap.ui.define(function () {
 			return value && value.toUpperCase();
 		}
 	};
+
+
+
 });
