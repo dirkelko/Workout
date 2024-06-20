@@ -841,7 +841,7 @@
         "for": "Ganzkörper",
         "roundsExercises": "3x7",
         "exercises":[
-            {"id":1, "ex":1, "round": 1, "name":"Burpees",                  "duration":45,"pause":10 },
+            {"id":1, "ex":1, "round": 1, "name":"Sprawls",                  "duration":45,"pause":10 },
             {"id":2, "ex":2, "round": 1, "name":"Back Lunge Front Kicks",   "duration":45,"pause":20 },
             {"id":3, "ex":3, "round": 1, "name":"Sit-Ups",                  "duration":45,"pause":20 },
             {"id":4, "ex":4, "round": 1, "name":"High Plank Side Steps",    "duration":45,"pause":20 },
@@ -849,7 +849,7 @@
             {"id":6, "ex":6, "round": 1, "name":"Skipping",                 "duration":45,"pause":20 },
             {"id":7, "ex":7, "round": 1, "name":"T Low Planks",             "duration":30,"pause":20 },
 
-            {"id":8, "ex":1, "round": 2, "name":"Frog Jump Speawls",        "duration":45,"pause":60 },
+            {"id":8, "ex":1, "round": 2, "name":"Frog Jump Sprawls",        "duration":45,"pause":60 },
             {"id":9, "ex":2, "round": 2, "name":"Back Lunge Front Kicks",   "duration":45,"pause":20 },
             {"id":10, "ex":3, "round": 2, "name":"Sit-Ups",                 "duration":45,"pause":20 },
             {"id":11, "ex":4, "round": 2, "name":"Low Plank Side Steps",    "duration":45,"pause":20 },
@@ -857,7 +857,7 @@
             {"id":13, "ex":6, "round": 2, "name":"Skipping Burpees",        "duration":45,"pause":20 },
             {"id":14, "ex":7, "round": 2, "name":"T Low Planks",            "duration":30,"pause":20 },
 
-            {"id":15, "ex":1, "round": 3, "name":"Burpees",                 "duration":45,"pause":60 },
+            {"id":15, "ex":1, "round": 3, "name":"Sprawls",                 "duration":45,"pause":60 },
             {"id":16, "ex":2, "round": 3, "name":"Back Lunge Front Kicks",  "duration":45,"pause":20 },
             {"id":17, "ex":3, "round": 3, "name":"Sit-Ups",                 "duration":45,"pause":20 },
             {"id":18, "ex":4, "round": 3, "name":"High Plank Side Steps",   "duration":45,"pause":20 },
