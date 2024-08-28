@@ -11,7 +11,7 @@
         {"id":3, "ex":3,  "round": 1, "name":"Lunges Rotation",         "duration":30,"pause":5},
         {"id":4, "ex":4,  "round": 1, "name":"Mountain Climber Twist",  "duration":30,"pause":5},
         {"id":5, "ex":5,  "round": 1, "name":"Walking Kicks",           "duration":30,"pause":5},
-        {"id":6, "ex":6,  "round": 1, "name":"Arm Circles Forwards",    "duration":15,"pause":5},
+        {"id":6, "ex":6,  "round": 1, "name":"Arm Circles Forward",    "duration":15,"pause":5},
         {"id":7, "ex":7,  "round": 1, "name":"Arm Circles Backwards",   "duration":15,"pause":5},
         {"id":8, "ex":8,  "round": 1, "name":"Wrist Rotation",          "duration":10,"pause":5}
     ]},
@@ -1640,6 +1640,7 @@
     {"name":"Full Control Bodyweight App - Skipping Burpees - EN","link":"https://www.youtube.com/embed/NbG2Z0hBpyQ?si=qvPD4yyG0XcgpIuJ"},
     {"name":"Full Control Bodyweight App - Inchworm Push-ups - English","link":"https://www.youtube.com/embed/JhmbIX4QRmY?si=3FysBxS4ldn5w4NO"},
     {"name":"Back Lunge Front Kicks","link":"https://www.youtube.com/embed/q9A5Ec-LUHM?si=_b3qfN8x8xGocjFP"},
+    {"name":"Crunches","link":"https://www.youtube.com/embed/opobCUeSBnE?si=UWd2eeY4k1EL_m7a"},
     {"name":"Bicycle Crunches","link":"https://www.youtube.com/embed/opobCUeSBnE?si=UWd2eeY4k1EL_m7a"},
     {"name":"Bicycle Sit-ups","link":"https://www.youtube.com/embed/z2lkRR9mIbY?si=Tw43CtnrctqPuIM0"},
     {"name":"Easy Russian Sit-ups","link":"https://www.youtube.com/embed/hsVCet4L-DM?si=X4KXWvNWEMHP-HTG"},

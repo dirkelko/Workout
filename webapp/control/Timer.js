@@ -124,8 +124,9 @@ sap.ui.define([
 				let laf = (remTime > milliSeconds/2)? 1 : 0;
 				let sArc = `M ${mX - dx} ${mY + r - dy} A ${r} ${r} 0 ${laf} 0 ${mX} ${mY}`
 				timerDom.querySelector("#clockPath").setAttribute("d",sArc);
-				if (remTime < 5000 && bPause ){
-					timerDom.querySelector("#nextName").innerHTML = "Next:";
+				//if ((aExercises[intervalIndex].id == 1 && remTime < 5000 || aExercises[intervalIndex].id != 1 && remTime < 10000) && bPause ){
+				if ( remTime < aExercises[intervalIndex].pause * 1000 - 5000  && bPause ){
+						timerDom.querySelector("#nextName").innerHTML = "Next:";
 					timerDom.querySelector("#exerciseName").innerHTML = aExercises[intervalIndex].name;
 				}
 				if (remTime <= 0 && intervalIndex >= aExercises.length -1 && !bPause){
