@@ -882,7 +882,7 @@
             {"id":6, "ex":6, "round": 1, "name":"Skipping",                     "duration":60,"pause":30 },
             {"id":7, "ex":7, "round": 1, "name":"T Push-Ups",                   "duration":45,"pause":30 },
 
-            {"id":8, "ex":1, "round": 2, "name":"Frog Jump Spawls",             "duration":60,"pause":60 },
+            {"id":8, "ex":1, "round": 2, "name":"Frog Jump Sprawls",             "duration":60,"pause":60 },
             {"id":9, "ex":2, "round": 2, "name":"Back Lunge Front Kicks",       "duration":60,"pause":30 },
             {"id":10, "ex":3, "round": 2, "name":"Jackknives",                  "duration":45,"pause":30 },
             {"id":11, "ex":4, "round": 2, "name":"Push-Up Jacks",               "duration":45,"pause":30 },
@@ -2214,6 +2214,7 @@
     {"name":"Hip Extender Right","link":"https://www.youtube.com/embed/IfUZ1kzpHA8?si=d0ARnxht0Wbv_H7a"},
     {"name":"Bars Knee Hold","link":"https://www.youtube.com/embed/-mc6HYBsKdE?si=dwBFjzes7ZCrOBxF"},
     {"name":"Stepups L","link":"https://www.youtube.com/embed/Z3ZqbvNorsE?si=DfHNkB7iBncveR76"},
-    {"name":"Stepups R","link":"https://www.youtube.com/embed/GnVDC4AO3zU?si=OZj8XWS57Ud1pBa2"}
+    {"name":"Stepups R","link":"https://www.youtube.com/embed/GnVDC4AO3zU?si=OZj8XWS57Ud1pBa2"},
+    {"name":"Easy Squats","link":"https://www.youtube.com/embed/jIet0fUHMbQ?si=2Y0RHYaSmUQ4GW1Y"}
     ]}
 
