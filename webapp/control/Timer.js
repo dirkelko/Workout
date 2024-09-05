@@ -27,8 +27,16 @@ sap.ui.define([
 	let bPause = true;
 	let noSleep;
 	let interval;
-    const bellSingle = new Audio('./sounds/BellSingle.m4a');
-    const bellTriple = new Audio('./sounds/BellTriple.m4a');
+    //const bellSingle = new Audio('./sounds/BellSingle.m4a');
+    //const bellTriple = new Audio('./sounds/BellTriple.m4a');
+
+	const bellSingle = new Howl({
+		src: ['./sounds/BellSingle.m4a']
+	});
+
+	const bellTriple = new Howl({
+		src: ['./sounds/BellTriple.m4a']
+	});
 
 	let Timer = Control.extend("com.sap.workout.control.Timer", {
 		metadata : {
@@ -46,6 +54,7 @@ sap.ui.define([
 		
 		init : function () {  
 			noSleep = new NoSleep();
+			//howler = new Howler();
 		},
 
 		reset : function(){
