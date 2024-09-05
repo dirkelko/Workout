@@ -1550,21 +1550,21 @@
         "exercises":[
             {"id":1, "ex":1, "round": 1, "name":"Running High Knees",   "duration":30,"pause":10 },
             {"id":2, "ex":2, "round": 1, "name":"Tuck Jump Burpees",    "duration":30,"pause":20 },
-            {"id":3, "ex":3, "round": 1, "name":"Crossack Squats",      "duration":30,"pause":20 },
+            {"id":3, "ex":3, "round": 1, "name":"Cossack Squats",      "duration":30,"pause":20 },
             {"id":4, "ex":4, "round": 1, "name":"Jump Squats",          "duration":30,"pause":20 },
             {"id":5, "ex":5, "round": 1, "name":"Low Plank Jacks",      "duration":30,"pause":20 },
             {"id":6, "ex":6, "round": 1, "name":"Jump Lunges",          "duration":30,"pause":20 },
 
             {"id":8, "ex":1, "round": 2, "name":"Running High Knees",   "duration":30,"pause":60 },
             {"id":9, "ex":2, "round": 2, "name":"Tuck Jump Burpees",    "duration":30,"pause":20 },
-            {"id":10, "ex":3, "round": 2, "name":"Crossack Squats",     "duration":30,"pause":20 },
+            {"id":10, "ex":3, "round": 2, "name":"Cossack Squats",     "duration":30,"pause":20 },
             {"id":11, "ex":4, "round": 2, "name":"Jump Squats",         "duration":30,"pause":20 },
             {"id":12, "ex":5, "round": 2, "name":"Low Plank Jacks",     "duration":30,"pause":20 },
             {"id":13, "ex":6, "round": 2, "name":"Jump Lunges",         "duration":30,"pause":20 },
 
             {"id":15, "ex":1, "round": 3, "name":"Running High Knees",  "duration":30,"pause":60 },
             {"id":16, "ex":2, "round": 3, "name":"Tuck Jump Burpees",   "duration":30,"pause":20 },
-            {"id":17, "ex":3, "round": 3, "name":"Crossack Squats",     "duration":30,"pause":20 },
+            {"id":17, "ex":3, "round": 3, "name":"Cossack Squats",     "duration":30,"pause":20 },
             {"id":18, "ex":4, "round": 3, "name":"Jump Squats",         "duration":30,"pause":20 },
             {"id":19, "ex":5, "round": 3, "name":"Low Plank Jacks",     "duration":30,"pause":20 },
             {"id":20, "ex":6, "round": 3, "name":"Jump Lunges",         "duration":30,"pause":20 }
