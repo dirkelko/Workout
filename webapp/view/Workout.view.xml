@@ -131,38 +131,37 @@
                         items="{path: 'workoutsModel>exercises', sorter: {path:'round', group:'.getRound', descending: false}}"
                     >
                         <columns>
-                            <Column width="80%">
+                            <Column width="40%">
                                 <header>
-                                    <!--Text text="Exercise"/-->
                                 </header>
                             </Column>
-                            <Column width="20%">
+                            <Column width="45%">
                                 <header>
-                                    <!--Text text="Duration"/-->
                                 </header>
                             </Column>
                             <Column
                                 width="15%"
-                                visible="false"
+                                visible="true"
                             >
                                 <header>
-                                    <Text text="Pause" />
                                 </header>
                             </Column>
                         </columns>
                         <items>
-                            <!--ColumnListItem visible="{workoutsModel>vis}" press="handleLinkPress" type="Active" highlight="{workoutsModel>current}"-->
-                            <ColumnListItem  press="handleLinkPress" type="Active" highlight="{workoutsModel>current}">
+                            <ColumnListItem  type="Active" highlight="{workoutsModel>current}">
                                 <cells>
-                                    <!--core:Icon 
-                                        src="sap-icon://video" press="handleLinkPress"/-->
+				<Image ariaDetails="detailsActiveImage" src="https://img.youtube.com/vi/{workoutsModel>youtubeId}/default.jpg"
+					decorative="false"
+					press="handleLinkPress" />                                    
+                    <!--core:Icon 
+                                        src="https://img.youtube.com/vi/j6aDLEYus3c/default.jpg" press="handleLinkPress"/-->
                                     <!--Text text="{workoutsModel>name}"/-->
-                                    <Link
+                                    <!--Link
                                         text="{workoutsModel>name}"
                                         press="handleLinkPress"
-                                    />
+                                    /-->
+                                    <Text text="{workoutsModel>name}" />
                                     <Text text="{workoutsModel>duration}" />
-                                    <Text text="{workoutsModel>pause}" />
                                   </cells>
                             </ColumnListItem>
                         </items>

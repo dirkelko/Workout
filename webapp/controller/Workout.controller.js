@@ -13,12 +13,21 @@ sap.ui.define([
             var idWorkOut = oEvent.getParameter("arguments").id;
             var indexWorkOut = this.getView().getModel("workoutsModel").getProperty("/").workouts.findIndex( wo=>{
                 return wo.id == idWorkOut;
-            });            
+            });
+            const allExercises = this.getView().getModel("workoutsModel").getProperty("/exercises");
+            const exercises = this.getView().getModel("workoutsModel").getProperty("/workouts/" + indexWorkOut + "/exercises");
+            for (let i = 0; i < exercises.length; i++) {
+                let exerciseName = this.getView().getModel("workoutsModel").getProperty("/workouts/" + indexWorkOut + "/exercises/" + i).name
+                let exercise = allExercises.find( e=>{
+                    return e.name == exerciseName;
+                });
+                this.getView().getModel("workoutsModel").setProperty("/workouts/" + indexWorkOut + "/exercises/" + i + "/youtubeId", exercise.youtubeId);
+            };
             this.getView().bindElement({
                 path: "/workouts/" + indexWorkOut,
                 model: "workoutsModel"
             });
-            let path = this.getView().getBindingContext("workoutsModel").sPath;
+            let path = this.getView().getBindingContext("workoutsModel").sPath;            
             this.byId("favouriteIcon").setSrc( this.getView().getModel("workoutsModel").getProperty(path + "/favourite")? "sap-icon://heart" : "sap-icon://heart-2");
         },
 
