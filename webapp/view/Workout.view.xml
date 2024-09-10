@@ -150,16 +150,10 @@
                         <items>
                             <ColumnListItem  type="Active" highlight="{workoutsModel>current}">
                                 <cells>
-				<Image ariaDetails="detailsActiveImage" src="https://img.youtube.com/vi/{workoutsModel>youtubeId}/default.jpg"
-					decorative="false"
-					press="handleLinkPress" />                                    
-                    <!--core:Icon 
-                                        src="https://img.youtube.com/vi/j6aDLEYus3c/default.jpg" press="handleLinkPress"/-->
-                                    <!--Text text="{workoutsModel>name}"/-->
-                                    <!--Link
-                                        text="{workoutsModel>name}"
-                                        press="handleLinkPress"
-                                    /-->
+                                    <Image ariaDetails="detailsActiveImage" src="https://img.youtube.com/vi/{workoutsModel>youtubeId}/default.jpg"
+                                        decorative="false"
+                                        press="handleLinkPress" />                                    
+
                                     <Text text="{workoutsModel>name}" />
                                     <Text text="{workoutsModel>duration}" />
                                   </cells>
