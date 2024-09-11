@@ -21,7 +21,7 @@ sap.ui.define([
                 let exercise = allExercises.find( e=>{
                     return e.name == exerciseName;
                 });
-                this.getView().getModel("workoutsModel").setProperty("/workouts/" + indexWorkOut + "/exercises/" + i + "/youtubeId", exercise.youtubeId);
+                if (exercise) this.getView().getModel("workoutsModel").setProperty("/workouts/" + indexWorkOut + "/exercises/" + i + "/youtubeId", exercise.youtubeId );
             };
             this.getView().bindElement({
                 path: "/workouts/" + indexWorkOut,
