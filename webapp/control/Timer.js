@@ -104,9 +104,7 @@ sap.ui.define([
 			noSleep.enable();
 
 			let aExercises = this.getExercises();
-			//let milliSeconds = (bPause)? aExercises[intervalIndex].pause * 1000 : aExercises[intervalIndex].duration * 1000;
-			//remTime = milliSeconds;
-			//console.log(`remTime: ${remTime} intervalIndex ${intervalIndex}`)
+
 			if (start) {
 				bPause = true;
 				intervalIndex=0;
@@ -138,7 +136,7 @@ sap.ui.define([
 				let sArc = `M ${mX - dx} ${mY + r - dy} A ${r} ${r} 0 ${laf} 0 ${mX} ${mY}`
 				timerDom.querySelector("#clockPath").setAttribute("d",sArc);
 				//if ((aExercises[intervalIndex].id == 1 && remTime < 5000 || aExercises[intervalIndex].id != 1 && remTime < 10000) && bPause ){
-				if ( remTime < aExercises[intervalIndex].pause * 1000 - 5000  && bPause ){
+				if ( remTime < Math.min(aExercises[intervalIndex].pause, 20) * 1000 - 5000  && bPause ){
 					timerDom.querySelector("#nextName").innerHTML = "Next:";
 					timerDom.querySelector("#exerciseName").innerHTML = aExercises[intervalIndex].name;
 					that.getModel("workoutsModel").setProperty( sPath + "/currentVideoId/", aExercises[intervalIndex].youtubeId);

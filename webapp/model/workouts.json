@@ -151,7 +151,7 @@
             {"id":5, "ex":5, "round": 1, "name":"Triceps Dips",         "duration":10,"pause":8},
             {"id":6, "ex":6, "round": 1, "name":"T High Plank",        "duration":10,"pause":8},
 
-            {"id":7, "ex":1, "round": 2, "name":"Bear Crawls",          "duration":12,"pause":10},
+            {"id":7, "ex":1, "round": 2, "name":"Bear Crawls",          "duration":12,"pause":60},
             {"id":8, "ex":2, "round": 2, "name":"Crunches",             "duration":12,"pause":8},
             {"id":9, "ex":3, "round": 2, "name":"Mountain Jumpers",     "duration":12,"pause":8},
             {"id":10, "ex":4, "round": 2, "name":"Knee MMA Push-ups",   "duration":12,"pause":8},
