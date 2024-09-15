@@ -16,6 +16,9 @@ sap.ui.define([
             });
             const allExercises = this.getView().getModel("workoutsModel").getProperty("/exercises");
             const exercises = this.getView().getModel("workoutsModel").getProperty("/workouts/" + indexWorkOut + "/exercises");
+            this.getView().getModel("workoutsModel").setProperty("/workouts/" + indexWorkOut + "/videoVisible/", false);
+            this.getView().getModel("workoutsModel").setProperty("/workouts/" + indexWorkOut + "/listVisible/", true);
+            this.getView().getModel("workoutsModel").setProperty("/workouts/" + indexWorkOut + "/timerVisible/", false);
             for (let i = 0; i < exercises.length; i++) {
                 let exerciseName = this.getView().getModel("workoutsModel").getProperty("/workouts/" + indexWorkOut + "/exercises/" + i).name
                 let exercise = allExercises.find( e=>{
@@ -29,15 +32,19 @@ sap.ui.define([
             });
             let path = this.getView().getBindingContext("workoutsModel").sPath;            
             this.byId("favouriteIcon").setSrc( this.getView().getModel("workoutsModel").getProperty(path + "/favourite")? "sap-icon://heart" : "sap-icon://heart-2");
+            this.getView().byId("exercisesListContainer").scrollTo(0,0);
+            //this.getView().byId("videoContainer").setVisible(false);
         },
 
         startWorkout: async function(oContext) {
-            this.byId("Timer").startClock(true);
+            //this.byId("Timer").setVisible(true)
+            this.byId("Timer").setVisible(true);
             this.byId("startButton").setVisible(false);
             this.byId("stopButton").setVisible(true);
             this.byId("resetButton").setVisible(false);
             this.byId("continueButton").setVisible(false);
             let screenLock = await navigator.wakeLock.request('screen');
+            this.byId("Timer").startClock(true);
         },
         continueWorkout: function(oContext) {
             this.byId("Timer").startClock(false);
@@ -77,6 +84,7 @@ sap.ui.define([
             this.byId("resetButton").setVisible(false);
             this.byId("nextButton").setVisible(false);
             this.byId("continueButton").setVisible(false);
+            //this.byId("Timer").setVisible(false);
 
             this.getOwnerComponent().getRouter().navTo("main", {id: "test"});
         },

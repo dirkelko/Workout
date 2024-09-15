@@ -14,9 +14,11 @@
         enableScrolling="false"
     >
         <content>
-        <core:HTML content='&lt;iframe width="390" height="216" src="https://www.youtube-nocookie.com/embed/{workoutsModel>youtubeId}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen&gt;&lt;/iframe&gt;'>
-            <!--core:HTML content='&lt;iframe width="100%" src="https://www.youtube.com/embed/{workoutsModel>youtubeId}?rel=0&amp;autoplay=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen&gt;&lt;/iframe&gt;' -->
-            </core:HTML> 
+            <!--core:HTML content='&lt;iframe width="560" height="315" src="https://www.youtube.com/embed/{workoutsModel>youtubeId}?autoplay=1&mute=1&loop=1&playlist={workoutsModel>youtubeId}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="true"&gt; &lt;/iframe &gt;'>
+            </core:HTML-->
+        <core:HTML content='&lt;iframe width="390" height="216" src="https://www.youtube-nocookie.com/embed/{workoutsModel>youtubeId}?loop=1&amp;start=3&amp;end=15&amp;playlist={workoutsModel>youtubeId}&amp;mute=1&amp;autoplay=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen&gt;&lt;/iframe&gt;'>
+            <!--core:HTML content='&lt;iframe width="100%" src="https://www.youtube.com/embed/{workoutsModel>youtubeId}?rel=0&amp;autoplay=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen&gt;&lt;/iframe&gt;'-->
+        </core:HTML> 
         </content>
     </Page>
 </mvc:View>

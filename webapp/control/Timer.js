@@ -112,6 +112,10 @@ sap.ui.define([
 				intervalIndex=0;
 				milliSeconds = (bPause)? aExercises[intervalIndex].pause * 1000 : aExercises[intervalIndex].duration * 1000;
 				remTime = milliSeconds;
+			} else {
+				this.getModel("workoutsModel").setProperty( sPath + "/videoVisible/", true);
+				this.getModel("workoutsModel").setProperty( sPath + "/listVisible/", false);
+			
 			}
 			let endTime = Date.now() + remTime;
 
@@ -135,20 +139,25 @@ sap.ui.define([
 				timerDom.querySelector("#clockPath").setAttribute("d",sArc);
 				//if ((aExercises[intervalIndex].id == 1 && remTime < 5000 || aExercises[intervalIndex].id != 1 && remTime < 10000) && bPause ){
 				if ( remTime < aExercises[intervalIndex].pause * 1000 - 5000  && bPause ){
-						timerDom.querySelector("#nextName").innerHTML = "Next:";
+					timerDom.querySelector("#nextName").innerHTML = "Next:";
 					timerDom.querySelector("#exerciseName").innerHTML = aExercises[intervalIndex].name;
-				}
+					that.getModel("workoutsModel").setProperty( sPath + "/currentVideoId/", aExercises[intervalIndex].youtubeId);
+					that.getModel("workoutsModel").setProperty( sPath + "/videoVisible/", true);
+					that.getModel("workoutsModel").setProperty( sPath + "/listVisible/", false);				}
 				if (remTime <= 0 && intervalIndex >= aExercises.length -1 && !bPause){
 					bellTriple.play();
 					timerDom.querySelector("#clockPath").setAttribute("stroke","transparent");
 					this.isRunnung = false;
 					clearInterval(interval);
 					timerDom.querySelector("#timer").innerHTML = timerString(0);
-					that.getModel("workoutsModel").setProperty( sPath + "/exercises/" + intervalIndex + "/current","Success");
+					that.getModel("workoutsModel").setProperty( sPath + "/exercises/" + intervalIndex + "/current", "Success");
 				} else if (remTime <= 0 && intervalIndex < aExercises.length){
 					if (bPause){
 						bellSingle.play();
 						that.getModel("workoutsModel").setProperty( sPath + "/exercises/" + intervalIndex + "/current","Warning");
+						//that.getModel("workoutsModel").setProperty( sPath + "/currentVideoId/", aExercises[intervalIndex].youtubeId);
+						//that.getModel("workoutsModel").setProperty( sPath + "/videoVisible/", true);
+						//that.getModel("workoutsModel").setProperty( sPath + "/listVisible/", false);
 						bPause = false;
 						milliSeconds = Number(aExercises[intervalIndex].duration) * 1000;		
 						//console.log("bPause to false " + milliSeconds);
@@ -158,6 +167,8 @@ sap.ui.define([
 						that.getModel("workoutsModel").setProperty( sPath + "/exercises/" + intervalIndex + "/current","Success");
 						intervalIndex = intervalIndex + 1;
 						milliSeconds = Number(aExercises[intervalIndex].pause) * 1000;
+						that.getModel("workoutsModel").setProperty( sPath + "/videoVisible/", false);
+						that.getModel("workoutsModel").setProperty( sPath + "/listVisible/", true);
 						//console.log("bPause to true " + milliSeconds + " index " +  intervalIndex);
 					}
 					timerDom.querySelector("#clockPath").setAttribute("stroke","transparent");
@@ -183,14 +194,21 @@ sap.ui.define([
 			clearInterval(interval);
 			this.isRunnung = false;
 			noSleep.disable();
+			const sPath = this.getBinding('exercises').getContext().getPath();
+			this.getModel("workoutsModel").setProperty( sPath + "/videoVisible/", false);
+			this.getModel("workoutsModel").setProperty( sPath + "/listVisible/", true);
+
 		},
 
 		resetClock : function(){
 			const timerDom = this.getDomRef(); 
-			timerDom.querySelector("#clockCircle").setAttribute("stroke",(!bPause)? "orange" : "green");
-			let exercises = this.getExercises();
-			remTime = (bPause)? exercises[intervalIndex].pause * 1000 : exercises[intervalIndex].duration * 1000;
-			timerDom.querySelector("#timer").innerHTML = timerString(remTime);
+			if (timerDom){
+				timerDom.querySelector("#clockCircle").setAttribute("stroke",(!bPause)? "orange" : "green");
+				let exercises = this.getExercises();
+				remTime = (bPause)? exercises[intervalIndex].pause * 1000 : exercises[intervalIndex].duration * 1000;
+				timerDom.querySelector("#timer").innerHTML = timerString(remTime);
+	
+			}
 			this.isRunnung = false;
 		},
 		nextExercise : function(){
@@ -200,11 +218,13 @@ sap.ui.define([
 			intervalIndex = (bPause)? intervalIndex : intervalIndex + 1;
 			bPause = false;
 			const timerDom = this.getDomRef(); 
+			const sPath = this.getBinding('exercises').getContext().getPath();
 			let exercises = this.getExercises();
 			milliSeconds = exercises[intervalIndex].duration * 1000;
 			remTime = milliSeconds;
 			timerDom.querySelector("#clockPath").setAttribute("stroke","transparent");
 			timerDom.querySelector("#clockCircle").setAttribute("stroke", "orange");
+			this.getModel("workoutsModel").setProperty( sPath + "/currentVideoId/", exercises[intervalIndex].youtubeId);
 			timerDom.querySelector("#exerciseName").innerHTML = exercises[intervalIndex].name;
 			timerDom.querySelector("#exerciseInfo").innerHTML = 
 			`Exercise ${exercises[intervalIndex].ex}/${exercises.filter(ex=>{ return ex.round == exercises[intervalIndex].round}).length}`;

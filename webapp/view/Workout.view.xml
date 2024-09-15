@@ -46,6 +46,8 @@
                     graphicsHeight="1200px"
                     width="100%"
                     height="60vh"
+                    visible="{workoutsModel>timerVisible}"
+
                 />
                 <Button
                     width="100%"
@@ -117,15 +119,26 @@
                         </layoutData-->
                     </Button>
                 </HBox>
+                <HBox id="videoContainer"
+                visible="{workoutsModel>videoVisible}"
+                >
+                    <core:HTML 
+                        id="videoBox"
+                        content='&lt;iframe width="390" height="216" src="https://www.youtube-nocookie.com/embed/{workoutsModel>currentVideoId}?loop=1&amp;start=3&amp;end=15&amp;playlist={workoutsModel>currentVideoId}&amp;mute=1&amp;autoplay=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen&gt;&lt;/iframe&gt;'>
+                    </core:HTML> 
+                </HBox>
                 <ScrollContainer
                     height="100%"
                     vertical="true"
+                    id="exercisesListContainer"
                 >
                     <layoutData>
                         <FlexItemData growFactor="1" />
                     </layoutData>
                     <Table
                         id="exercisesList"
+                        visible="{workoutsModel>listVisible}"
+
                         mode="None"
                         includeItemInSelection="false"
                         items="{path: 'workoutsModel>exercises', sorter: {path:'round', group:'.getRound', descending: false}}"
@@ -148,7 +161,7 @@
                             </Column>
                         </columns>
                         <items>
-                            <ColumnListItem  type="Active" highlight="{workoutsModel>current}">
+                            <ColumnListItem  highlight="{workoutsModel>current}">
                                 <cells>
                                     <Image ariaDetails="detailsActiveImage" src="https://img.youtube.com/vi/{workoutsModel>youtubeId}/default.jpg"
                                         decorative="false"
@@ -156,7 +169,7 @@
 
                                     <Text text="{workoutsModel>name}" />
                                     <Text text="{workoutsModel>duration}" />
-                                  </cells>
+                                </cells>
                             </ColumnListItem>
                         </items>
                     </Table>
