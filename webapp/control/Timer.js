@@ -54,7 +54,6 @@ sap.ui.define([
 		
 		init : function () {  
 			noSleep = new NoSleep();
-			//howler = new Howler();
 		},
 
 		reset : function(){
