@@ -18,7 +18,7 @@ sap.ui.define([
             const exercises = this.getView().getModel("workoutsModel").getProperty("/workouts/" + indexWorkOut + "/exercises");
             this.getView().getModel("workoutsModel").setProperty("/workouts/" + indexWorkOut + "/videoVisible/", false);
             this.getView().getModel("workoutsModel").setProperty("/workouts/" + indexWorkOut + "/listVisible/", true);
-            this.getView().getModel("workoutsModel").setProperty("/workouts/" + indexWorkOut + "/timerVisible/", false);
+            this.getView().getModel("workoutsModel").setProperty("/workouts/" + indexWorkOut + "/timerVisible/", true);
             for (let i = 0; i < exercises.length; i++) {
                 let exerciseName = this.getView().getModel("workoutsModel").getProperty("/workouts/" + indexWorkOut + "/exercises/" + i).name
                 let exercise = allExercises.find( e=>{
@@ -36,14 +36,13 @@ sap.ui.define([
             //this.getView().byId("videoContainer").setVisible(false);
         },
 
-        startWorkout: async function(oContext) {
-            //this.byId("Timer").setVisible(true)
+        startWorkout: function(oContext) {
             this.byId("Timer").setVisible(true);
             this.byId("startButton").setVisible(false);
             this.byId("stopButton").setVisible(true);
             this.byId("resetButton").setVisible(false);
             this.byId("continueButton").setVisible(false);
-            let screenLock = await navigator.wakeLock.request('screen');
+            //const screenLock = await navigator.wakeLock.request('screen');
             this.byId("Timer").startClock(true);
         },
         continueWorkout: function(oContext) {
