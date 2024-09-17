@@ -3,13 +3,23 @@ sap.ui.define([
 ], function (BaseController) {
     "use strict";
 
+    let noSleep = null;
+
     return BaseController.extend("com.sap.controller.Workout", {
+
 
         onInit: function () {
             this.getOwnerComponent().getRouter().getRoute("RouteWorkout").attachMatched(this.onRouteMatched, this);
         },
 
+        onExit: function(){
+            noSleep.disable();
+        },
+
         onRouteMatched: function (oEvent) {
+
+            noSleep = new NoSleep();
+
             var idWorkOut = oEvent.getParameter("arguments").id;
             var indexWorkOut = this.getView().getModel("workoutsModel").getProperty("/").workouts.findIndex( wo=>{
                 return wo.id == idWorkOut;
@@ -37,6 +47,7 @@ sap.ui.define([
         },
 
         startWorkout: function(oContext) {
+            noSleep.enable();
             this.byId("Timer").setVisible(true);
             this.byId("startButton").setVisible(false);
             this.byId("stopButton").setVisible(true);
@@ -61,6 +72,7 @@ sap.ui.define([
         },
 
         stopWorkout: function(oContext) {
+            noSleep.disable();
             this.byId("Timer").stopClock();
             this.byId("continueButton").setVisible(true);
             this.byId("resetButton").setVisible(true);
@@ -84,6 +96,8 @@ sap.ui.define([
             this.byId("nextButton").setVisible(false);
             this.byId("continueButton").setVisible(false);
             //this.byId("Timer").setVisible(false);
+
+            noSleep.disable();
 
             this.getOwnerComponent().getRouter().navTo("main", {id: "test"});
         },

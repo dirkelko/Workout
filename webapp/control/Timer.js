@@ -25,7 +25,7 @@ sap.ui.define([
 	let remTime = 0;
 	let intervalIndex=0;
 	let bPause = true;
-	let noSleep;
+	//let noSleep;
 	let interval;
     //const bellSingle = new Audio('./sounds/BellSingle.m4a');
     //const bellTriple = new Audio('./sounds/BellTriple.m4a');
@@ -53,7 +53,7 @@ sap.ui.define([
 		isRunnung : false,
 		
 		init : function () {  
-			noSleep = new NoSleep();
+			//noSleep = new NoSleep();
 		},
 
 		reset : function(){
@@ -100,7 +100,7 @@ sap.ui.define([
 			// mark current exercise as active (Warning = yellow) in table
 			//this.getModel("workoutsModel").setProperty( sPath + "/exercises/" + intervalIndex + "/current","Warning");
 
-			noSleep.enable();
+			//noSleep.enable();
 
 			let aExercises = this.getExercises();
 
@@ -190,7 +190,7 @@ sap.ui.define([
 			//const timerDom = this.getDomRef(); 
 			clearInterval(interval);
 			this.isRunnung = false;
-			noSleep.disable();
+			//noSleep.disable();
 			const sPath = this.getBinding('exercises').getContext().getPath();
 			this.getModel("workoutsModel").setProperty( sPath + "/videoVisible/", false);
 			this.getModel("workoutsModel").setProperty( sPath + "/listVisible/", true);

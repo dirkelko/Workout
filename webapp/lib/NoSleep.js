@@ -119,7 +119,11 @@ var oldIOS = function oldIOS() {
 
 // Detect native Wake Lock API support
 var nativeWakeLock = function nativeWakeLock() {
-  return "wakeLock" in navigator;
+  let displayMode = 'browser';
+  if (navigator.standalone || window.matchMedia('(display-mode: standalone)').matches) {
+    displayMode = 'standalone';
+  }
+  return "wakeLock" in navigator && displayMode === 'browser';
 };
 
 var NoSleep = function () {

@@ -14,10 +14,12 @@ sap.ui.define([
 			this.selectedLevel = "0";
 			let oModel = this.getOwnerComponent().getModel("workoutsModel");
 			let favourites = localStorage.getItem("favourites") || [];
-			oModel.oData.workouts.forEach( workout =>{
-				workout.duration = Math.round(workout.exercises.reduce((a,e)=>a+parseInt(e.duration)+parseInt(e.pause),0)/60);
-				workout.favourite = favourites.indexOf(workout.id) != -1;
-			})
+			if (oModel.oData.workouts){
+				oModel.oData.workouts.forEach( workout =>{
+					workout.duration = Math.round(workout.exercises.reduce((a,e)=>a+parseInt(e.duration)+parseInt(e.pause),0)/60);
+					workout.favourite = favourites.indexOf(workout.id) != -1;
+				})	
+			}
 		},
 
         onRouteMatched: function (oEvent) {
@@ -33,6 +35,12 @@ sap.ui.define([
 			this.getView().byId("iconTabBar").setSelectedKey("0");
 			//var itf0 = this.getView().byId("iconTabFilter0");
 			//this.getView().byId("iconTabBar").setSelectedItem(itf0);
+			let displayMode = 'browser';
+			if (navigator.standalone || window.matchMedia('(display-mode: standalone)').matches) {
+			  displayMode = 'standalone';
+			}
+			console.log(`displayMode: ${displayMode}`)
+			this.getView().byId("mainPage").setTitle(this.getView().byId("mainPage").getTitle() + " " +displayMode);
 		},
 
 		formatIconColor: function(level){
